@@ -14,8 +14,9 @@
 
   <div class="row">
     <div class="col-md-4 col-sm-6 text-center" style="padding: 10px" *ngFor="let product of products">
-      <div class="product" (mouseenter)="product.hover = true" (mouseleave)="product.hover = false"
-           (click)="openProductDetail(product)">
+      <div class="product">
+        <!--(mouseenter)="product.hover = true" (mouseleave)="product.hover = false"
+           (click)="openProductDetail(product)"-->
         <img class="img-fluid" src="{{product.images[0].url}}" alt="{{product.images[0].alt}}">
         <h5 style="margin-bottom: 0px; font-weight: 300;">{{product.name}}</h5>
         <p style="color: #777;">{{product.caption}}</p>
