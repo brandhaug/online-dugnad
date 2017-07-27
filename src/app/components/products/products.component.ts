@@ -11,7 +11,8 @@ export class ProductsComponent implements OnInit {
 
   products: any[];
 
-  constructor(private productsService: ProductsService, private flashMessagesService: FlashMessagesService) { }
+  constructor(private productsService: ProductsService,
+              private flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
     this.productsService.getActiveProducts().subscribe(

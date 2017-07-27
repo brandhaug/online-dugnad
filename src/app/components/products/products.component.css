@@ -1,14 +1,14 @@
 .product:hover {
-  box-shadow: 0 3px 20px 0 rgba(45, 165, 218, .6);
+  /*box-shadow: 0 3px 20px 0 rgba(45, 165, 218, .6);*/
 }
 
 .product:hover img {
-  -webkit-transform: scale(1.05) rotate(-1.05deg);
+  /*-webkit-transform: scale(1.05) rotate(-1.05deg);*/
 }
 
 .product {
-  transition: all 0.3s ease;
-  cursor: pointer;
+  /*transition: all 0.3s ease;*/
+  /*cursor: pointer;*/
   border: 1px solid #dddddd;
   background-color: white;
   padding: 20px;
