@@ -1,0 +1,31 @@
+<div class="container" style="padding-top: 50px">
+  <h2 class="title">Produkter</h2>
+  <div class="row">
+    <div class="col text-center">
+      <ul class="list-inline">
+        <li class="list-inline-item">✓ Fri frakt</li>
+        <li class="list-inline-item">✓ Faktura</li>
+        <li class="list-inline-item">✓ Returrett</li>
+        <li class="list-inline-item">✓ Enkelt</li>
+        <li class="list-inline-item">✓ God fortjeneste</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-6 text-center" style="padding: 10px" *ngFor="let product of products">
+      <div class="product" (mouseenter)="product.hover = true" (mouseleave)="product.hover = false"
+           (click)="openProductDetail(product)">
+        <img class="img-fluid" src="{{product.images[0].url}}" alt="{{product.images[0].alt}}">
+        <h5 style="margin-bottom: 0px; font-weight: 300;">{{product.name}}</h5>
+        <p style="color: #777;">{{product.caption}}</p>
+        <hr>
+        <b>Dere tjener {{product.profit2 / 100}},-</b>
+        <p>Anbefalt salgspris {{product.price2 / 100}},-</p>
+
+        <p style="margin-bottom: 0px; color: #008cba; transition: all 0.3s ease;"
+           [ngClass]="{'bold': product.hover}">Trykk for å vise detaljer</p>
+      </div>
+    </div>
+  </div>
+</div>

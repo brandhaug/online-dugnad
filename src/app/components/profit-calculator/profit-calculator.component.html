@@ -1,0 +1,63 @@
+<div class="container" style="padding-top: 40px">
+  <h2 class="title">Hvor mye tjener dere?</h2>
+  <div class="row">
+    <div class="col-md-6 text-center" style="padding: 10px">
+      <div style="border-radius: 5px; border: 1px solid #dddddd; padding: 15px 30px;">
+        <h4>Kalkulator</h4>
+        <div *ngFor="let slider of sliders">
+          <label>{{slider.label}}<span *ngIf="slider.product"> per medlem</span></label>
+          <nouislider [config]="slider.config" [(ngModel)]="slider.model"
+                      (ngModelChange)="onSliderChange()"></nouislider>
+        </div>
+        <strong>Total fortjeneste: {{totalProfit}},-</strong>
+      </div>
+    </div>
+    <div class="col-md-6 text-center" style="padding: 10px">
+      <div style="border-radius: 5px; border: 1px solid #dddddd; padding: 15px 30px;">
+        <h4>Bestillingsskjema</h4>
+        <div>
+          <table class="table table-order">
+            <tbody>
+            <tr *ngFor="let slider of sliders">
+              <td *ngIf="slider.product" class="text-left">{{slider.model * sliders[0].model}} {{slider.label}}</td>
+              <td *ngIf="slider.product" class="text-right">{{slider.model * slider.price * sliders[0].model}},-</td>
+            </tr>
+            <tr>
+              <td class="text-left">Fakturabeløp inkl. moms og frakt:</td>
+              <td class="text-right">kr {{totalPrice}},-</td>
+            </tr>
+            </tbody>
+          </table>
+          <hr>
+          <h5>Selg først – betal senere!</h5>
+          <small>
+            Fakturaen har 20 dagers forfall om annet ikke er avtalt. Faktura sendes til dere etter at varene er sendt
+            fra oss. Husk også at dere har 20 dagers returrett.
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="padding: 0; margin-top: 20px">
+  <div class="row" style="margin-top: 5px; padding: 40px 0;">
+    <div class="container">
+      <div class="col text-center">
+        <h4>Begynn med dugnaden i dag, enkelt og risikofritt</h4>
+        <p>Vi tilbyr både tradisjonelle og digitale bestillingsskjema for dine kunder</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6" style="padding: 10px;">
+          <a href="#" class="btn btn-lg btn-secondary form-control" (click)="downloadForm()">Tradisjonelt
+            bestillingsskjema</a>
+        </div>
+        <div class="col-md-6" style="padding: 10px;">
+          <a [routerLink]="['/digitalt-bestillingsskjema']" class="btn btn-lg btn-primary form-control">
+            Digitalt
+            bestillingsskjema</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

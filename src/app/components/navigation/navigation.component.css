@@ -1,0 +1,9 @@
+@media all and (max-width: 576px) {
+  .navigation-container {
+    margin: 0;
+  }
+}
+
+.navbar-toggler {
+  margin-top: 10px;
+}
