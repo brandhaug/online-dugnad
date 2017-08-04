@@ -16,19 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-let template = readFileSync(join(__dirname, '..', 'dist', 'index.html')).toString();
-
-app.engine('html', (_, options, callback) => {
-  const opts = { document: template, url: options.req.url };
-
-renderModuleFactory(AppServerModuleNgFactory, opts)
-  .then(html => callback(null, html));
-});
-
-app.set('view engine', 'html');
-app.set('views', 'src');
-
-app.get('*.*', express.static(join(__dirname, '..', 'dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,10 +25,6 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use('/api', api);
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
 
 const port = process.env.PORT || '3000';
 app.set('port', port);
