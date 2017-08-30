@@ -19,7 +19,7 @@ export class SampleService {
     });
     const options = new RequestOptions({headers: headers});
 
-    return this.http.post(environment.crmBaseUrl + '/samples', body, options)
+    return this.http.post(environment.crmBaseUrl + '/samplerequests', body, options)
       .map((res: Response) => res.json())
       .catch((err: any) => this.globalService.handleServerError(err));
   }
