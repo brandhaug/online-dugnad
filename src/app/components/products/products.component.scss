@@ -1,0 +1,43 @@
+#pros-list li {
+  margin: 0 7px;
+
+  i {
+    color: green;
+  }
+}
+
+#products-row {
+
+  .product-col {
+    padding: 10px;
+
+    .product {
+      height: 100%;
+      cursor: pointer;
+      border: 1px solid #dddddd;
+      background-color: white;
+      padding: 20px;
+
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      will-change: transform, box-shadow;
+      box-shadow: 0 10px 40px 0 rgba(62, 57, 107, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06);
+
+      img {
+        max-height: 225px;
+        margin-bottom: 10px;
+      }
+
+      .click-to-show {
+        display: block;
+        color: #008cba;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        transform: translateY(-5px) translateZ(0);
+        box-shadow: 0 16px 32px 0 rgba(62, 57, 107, 0.28), 0 0 0 transparent;
+      }
+    }
+  }
+
+}

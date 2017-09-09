@@ -1,0 +1,36 @@
+.thumbnail-col {
+  margin-bottom: 5px;
+  padding: 0;
+  cursor: pointer;
+
+  .thumbnail {
+    border: 1px solid #dddddd;
+
+    &.active {
+      border: 1px solid #0275d8;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+#content-col {
+  padding: 0 15px;
+
+  .attribute {
+    border-radius: 0 !important;
+    margin: 3px 3px;
+    background-color: white;
+    border: 1px solid #666;
+    padding: 8px 12px !important;
+    &.active {
+      border: 3px solid #0275d8;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0.05em 0.05em 0.5em #969696;
+    }
+  }
+}

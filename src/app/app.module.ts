@@ -20,15 +20,18 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {ProductsService} from './services/products.service';
 import {GlobalService} from './services/global.service';
 import {ShopComponent} from './components/shop/shop.component';
-import {CartComponent} from './cart/cart.component';
+import {CartComponent} from './components/cart/cart.component';
 import {TermsComponent} from './components/terms/terms.component';
 import {FormService} from './services/form.service';
 import {OrderSampleComponent} from './components/order-sample/order-sample.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SampleService} from './services/sample.service';
 import {Angulartics2Mixpanel, Angulartics2Module} from 'angulartics2';
 import {DigitalOrderFormComponent} from './components/digital-order-form/digital-order-form.component';
 import {OrderSampleButtonComponent} from './components/order-sample-button/order-sample-button.component';
+import {ProductModalComponent} from './components/product-modal/product-modal.component';
+import {ModalModule} from 'ngx-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SystemRequestModalComponent } from './components/system-request-modal/system-request-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import {OrderSampleButtonComponent} from './components/order-sample-button/order
     TermsComponent,
     OrderSampleComponent,
     DigitalOrderFormComponent,
-    OrderSampleButtonComponent
+    OrderSampleButtonComponent,
+    ProductModalComponent,
+    SystemRequestModalComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,7 @@ import {OrderSampleButtonComponent} from './components/order-sample-button/order
     NouisliderModule,
     ReactiveFormsModule,
     FlashMessagesModule,
+    ModalModule.forRoot(),
     NgbModule.forRoot(),
     Angulartics2Module.forRoot([Angulartics2Mixpanel])
   ],
@@ -68,7 +74,9 @@ import {OrderSampleButtonComponent} from './components/order-sample-button/order
     SampleService
   ],
   entryComponents: [
-    OrderSampleComponent
+    OrderSampleComponent,
+    ProductModalComponent,
+    SystemRequestModalComponent
   ],
   bootstrap: [AppComponent]
 })

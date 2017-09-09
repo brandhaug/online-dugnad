@@ -7,7 +7,7 @@ import {Angulartics2Mixpanel} from 'angulartics2';
 @Component({
   selector: 'app-profit-calculator',
   templateUrl: './profit-calculator.component.html',
-  styleUrls: ['./profit-calculator.component.css']
+  styleUrls: ['./profit-calculator.component.scss']
 })
 export class ProfitCalculatorComponent implements OnInit {
 

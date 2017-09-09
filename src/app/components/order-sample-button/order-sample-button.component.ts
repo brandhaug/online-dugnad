@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Component, OnInit} from '@angular/core';
 import {Angulartics2Mixpanel} from 'angulartics2';
 import {OrderSampleComponent} from '../order-sample/order-sample.component';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-order-sample-button',
   templateUrl: './order-sample-button.component.html',
-  styleUrls: ['./order-sample-button.component.css']
+  styleUrls: ['./order-sample-button.component.scss']
 })
 export class OrderSampleButtonComponent implements OnInit {
 
-  constructor(private modalService: NgbModal,
+  products: any[];
+  bsModalRef: BsModalRef;
+
+
+  constructor(private modalService: BsModalService,
               private mixpanel: Angulartics2Mixpanel) {
   }
 
@@ -18,11 +22,8 @@ export class OrderSampleButtonComponent implements OnInit {
   }
 
   openOrderSample() {
-    const modalRef = this.modalService.open(OrderSampleComponent);
+    this.bsModalRef = this.modalService.show(OrderSampleComponent);
     this.mixpanel.eventTrack('Opened order sample', null);
-    modalRef.result.then(res => {
-    }).catch(() => {
-    });
   }
 
 }
