@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormService} from '../../services/form.service';
-import {saveAs} from 'file-saver';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Angulartics2Mixpanel} from 'angulartics2';
 
@@ -100,15 +99,4 @@ export class ProfitCalculatorComponent implements OnInit {
       this.totalPrice += (this.sliders[0].model * (this.sliders[i].model * this.sliders[i].price));
     }
   }
-
-  // downloadForm() {
-  //   this.formService.getForm().subscribe(res => {
-  //     const blob = new Blob([res], {type: 'application/pdf;charset=utf-8'});
-  //     saveAs(blob, 'test.pdf');
-  //     this.mixpanel.eventTrack('Downloaded form', null);
-  //   }, err => {
-  //     this.flashMessagesService.show('Noe gikk galt', {cssClass: 'alert-danger', timeout: 6000});
-  //   });
-  // }
-
 }

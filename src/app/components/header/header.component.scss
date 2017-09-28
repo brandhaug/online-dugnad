@@ -1,14 +1,17 @@
 header {
-  background: url(../../../assets/images/header/header.jpg) center no-repeat;
+  //background: url(../../../assets/images/header/header.jpg) center no-repeat;
   width: 100%;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
   height: 600px;
   max-height: 80vh;
   display: flex;
   align-items: center;
 
   @media (max-width: 768px){
-    background: url(../../../assets/images/header/header_mobile.jpg) center no-repeat;
+    //background: url(../../../assets/images/header/header_mobile.jpg) center no-repeat;
     height: 500px;
+    background-position: center !important;
   }
 }
 

@@ -8,7 +8,7 @@ export class GlobalService {
 
   public handleServerError(err: any) {
     console.log(err);
-    return Observable.throw(err.json().error || 'Server error');
+    return Observable.throw(err.error || 'Server error');
   }
 
 }

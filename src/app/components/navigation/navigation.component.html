@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-light navbar-expand-md">
   <div class="container" id="nav-container">
-    <a class="navbar-brand" [routerLink]="['/']">
+    <a class="navbar-brand" (click)="navigateHome()" href="javascript:void(0)">
       <img src="/assets/images/logo/logo_icon@50.png" height="50" class="d-inline-block align-top" alt="Logo">
       <span style="line-height: 50px"><b><em>KVIKK</em></b> Dugnad</span>
     </a>

@@ -22,8 +22,6 @@ import {SampleService} from './services/sample.service';
 import {Angulartics2Mixpanel, Angulartics2Module} from 'angulartics2';
 import {DigitalOrderFormComponent} from './components/digital-order-form/digital-order-form.component';
 import {OrderSampleButtonComponent} from './components/order-sample-button/order-sample-button.component';
-import {ModalModule} from 'ngx-bootstrap';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NouisliderModule} from 'ng2-nouislider/src/nouislider';
 import {ProductComponent} from './components/product/product.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -33,6 +31,7 @@ import {CallToActionComponent} from './components/call-to-action/call-to-action.
 import { SystemRequestComponent } from './components/system-request/system-request.component';
 import {LoadingService} from './services/loading.service';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { RussComponent } from './components/russ/russ.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +53,8 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
     PrivacyComponent,
     CallToActionComponent,
     SystemRequestComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    RussComponent
   ],
   imports: [
     BrowserModule,
@@ -64,8 +64,6 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
     NouisliderModule,
     ReactiveFormsModule,
     FlashMessagesModule,
-    ModalModule.forRoot(),
-    NgbModule.forRoot(),
     Angulartics2Module.forRoot([Angulartics2Mixpanel])
   ],
   providers: [
