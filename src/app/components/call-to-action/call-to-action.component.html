@@ -10,6 +10,7 @@
       <div class="col text-center buttons">
         <a [routerLink]="['/digital-dugnad']" class="btn btn-primary" *ngIf="readMore">
           Les mer</a>
+        <a (click)="openContactMe()" class="btn btn-primary" href="javascript:void(0)" *ngIf="contact">Kontakt meg</a>
         <a (click)="openSendSystemRequest()" href="javascript:void(0)" class="btn btn-success">
           Sett i gang</a>
       </div>

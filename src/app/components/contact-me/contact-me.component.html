@@ -1,16 +1,17 @@
 <app-navigation></app-navigation>
 
-<section class="full-height-section" id="system-request-section">
+<section id="contact-me-section" class="full-height-section">
   <div class="container">
     <div class="box pad-box">
-      <h2 style="margin-bottom: 20px">Fyll inn for å få tilgang til systemet!</h2>
+      <h1 class="text-center" style="margin-bottom: 20px">Kontakt meg</h1>
       <form role="form" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
         <div class="form-group">
           <input type="text"
                  class="form-control" formControlName="organization"
                  placeholder="Klubb/Organisasjon/Russegruppe">
           <div *ngIf="myForm.get('organization').touched">
-            <small class="error" *ngIf="myForm.get('organization').hasError('required')">Dette feltet er krevd.</small>
+            <small class="error" *ngIf="myForm.get('organization').hasError('required')">Dette feltet er krevd.
+            </small>
             <small class="error" *ngIf="myForm.get('organization').hasError('minlength')">Dette feltet er for kort.
             </small>
           </div>
@@ -40,7 +41,8 @@
             </small>
             <small class="error" *ngIf="myForm.get('phoneNumber').hasError('minlength')">Dette feltet er for kort.
             </small>
-            <small class="error" *ngIf="myForm.get('phoneNumber').hasError('pattern')">Dette feltet har ugyldig verdi.
+            <small class="error" *ngIf="myForm.get('phoneNumber').hasError('pattern')">Dette feltet har ugyldig
+              verdi.
             </small>
           </div>
         </div>

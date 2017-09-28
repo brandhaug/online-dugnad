@@ -13,12 +13,18 @@ export class CallToActionComponent implements OnInit {
   @Input() image: string;
   @Input() title: string;
   @Input() subTitle: string;
+  @Input() contact: boolean;
 
   constructor(private mixpanel: Angulartics2Mixpanel,
               private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  openContactMe() {
+    this.mixpanel.eventTrack('Opened contact me', null);
+    this.router.navigate(['/kontakt-meg']);
   }
 
   openSendSystemRequest() {

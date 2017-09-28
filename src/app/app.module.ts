@@ -32,6 +32,7 @@ import {PrivacyComponent} from './components/privacy/privacy.component';
 import {CallToActionComponent} from './components/call-to-action/call-to-action.component';
 import { SystemRequestComponent } from './components/system-request/system-request.component';
 import {LoadingService} from './services/loading.service';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {LoadingService} from './services/loading.service';
     ProductListComponent,
     PrivacyComponent,
     CallToActionComponent,
-    SystemRequestComponent
+    SystemRequestComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,

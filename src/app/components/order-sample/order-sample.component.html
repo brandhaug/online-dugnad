@@ -1,10 +1,9 @@
 <app-navigation></app-navigation>
 
-<section id="order-sample-section">
-<div class="container">
-  <h1 class="text-center page-title">Fyll inn for å få gratis vareprøver!</h1>
-  <div class="row justify-content-center">
-    <div class="col-lg-5 col-md-7 col-sm-10">
+<section id="order-sample-section" class="full-height-section">
+  <div class="container">
+    <div class="box pad-box">
+      <h2 class="text-center page-title">Fyll inn for å få gratis vareprøver!</h2>
       <form role="form" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
         <div class="form-group">
           <input type="text"
@@ -40,12 +39,5 @@
       </form>
     </div>
   </div>
-</div>
 </section>
-
-<app-call-to-action [image]="'computer.jpg'"
-                    [readMore]="true"
-                    [title]="'Digital dugnad gjør det enklere, både for deg og dine kunder'"
-                    [subTitle]="'Lett å lære - Uforpliktende - Risikofritt - Nye inntektsmuligheter'"
-></app-call-to-action>
 <app-footer></app-footer>

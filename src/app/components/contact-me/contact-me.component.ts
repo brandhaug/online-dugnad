@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SampleService} from '../../services/sample.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
@@ -7,12 +7,11 @@ import {Router} from '@angular/router';
 import {LoadingService} from '../../services/loading.service';
 
 @Component({
-  selector: 'app-order-sample',
-  templateUrl: './order-sample.component.html',
-  styleUrls: ['./order-sample.component.scss']
+  selector: 'app-contact-me',
+  templateUrl: './contact-me.component.html',
+  styleUrls: ['./contact-me.component.scss']
 })
-export class OrderSampleComponent implements OnInit {
-
+export class ContactMeComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -20,29 +19,29 @@ export class OrderSampleComponent implements OnInit {
               private flashMessagesService: FlashMessagesService,
               private mixpanel: Angulartics2Mixpanel,
               private router: Router,
-              private loadingService: LoadingService) {
-  }
+              private loadingService: LoadingService) { }
+
 
   ngOnInit() {
     this.myForm = this.fb.group({
       'organization': ['', [Validators.required, Validators.minLength(4)]],
+      'email': ['', [Validators.required, Validators.minLength(5), Validators.pattern('\\S+@\\S+\\.\\S+')]],
       'phoneNumber': ['', [Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')]],
     });
   }
 
   submitForm(value: any) {
     this.loadingService.setLoading(true);
-    value.sample = true;
+    value.contact = true;
+
     this.sampleService.createSampleRequest(value).subscribe(res => {
       this.flashMessagesService.show(res.message, {cssClass: 'alert-success', timeout: 4000});
       this.router.navigate(['/']);
-      this.mixpanel.eventTrack('Requested order sample', value);
+      this.mixpanel.eventTrack('Requested contact request', value);
       this.loadingService.setLoading(false);
-
     }, err => {
       this.flashMessagesService.show(err, {cssClass: 'alert-danger', timeout: 6000});
       this.loadingService.setLoading(false);
     });
   }
-
 }

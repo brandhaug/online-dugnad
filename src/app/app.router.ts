@@ -9,6 +9,7 @@ import {TermsComponent} from './components/terms/terms.component';
 import {PrivacyComponent} from './components/privacy/privacy.component';
 import {OrderSampleComponent} from './components/order-sample/order-sample.component';
 import {SystemRequestComponent} from './components/system-request/system-request.component';
+import {ContactMeComponent} from './components/contact-me/contact-me.component';
 
 export const router: Routes = [{
   path: '',
@@ -38,6 +39,9 @@ export const router: Routes = [{
 }, {
   path: 'sett-i-gang',
   component: SystemRequestComponent
+},{
+  path: 'kontakt-meg',
+  component: ContactMeComponent
 }, {
   path: '**',
   redirectTo: ''
