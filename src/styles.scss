@@ -7,10 +7,37 @@
 html, body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
 }
 
 .title {
   text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+h3 {
+
 }
 
 h5 {
@@ -19,5 +46,23 @@ h5 {
 
 h6 {
   margin-bottom: 2px;
+}
+
+
+#flashMessages {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 99;
+
+  .alert {
+    margin: 5px 0;
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
 }
 

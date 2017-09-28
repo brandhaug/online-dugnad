@@ -1,27 +1,48 @@
 <app-navigation></app-navigation>
+<section id="about-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h1 class="page-title">Om oss</h1>
+        <p>Vårt mål er å skape din beste dugnadsopplevelse. Vi vet at du ønsker å bruke tiden din til andre ting
+          enn
+          dugnad, og det er nettopp derfor vi jobber hver dag med å gjøre dugnaden enklere - både for de som
+          arrangerer, og de som deltar.
+        </p>
+        <h5 class="text-left" style="margin-bottom: 5px; font-weight: bolder;">Hva gjør vi?</h5>
+        <p>Kvikk Dugnad tilbyr et skreddersydd system med hovedformål å forenkle dugnaden. Systemet er utviklet
+          i
+          tett samarbeid med ingeniører og jurister, for å gi både privatpersoner og organisasjoner en god og
+          sikker kundeopplevelse. Vi tilbyr også
+          personlig kundebehandling, både via telefon, mail og chat.</p>
 
-<div class="container">
-  <div class="row justify-content-center" style="padding: 40px 0">
-    <div class="col-md-8">
-      <h5><b>Vårt fokusområde er enkelhet og høy fortjeneste</b></h5>
-      <p>I motsetning til å fylle opp garasjen med store pakker og gå flere turer i nabolaget ved levering, tilbyr vi
-        kun små produkter som tar liten plass og er lett å levere.</p>
+        <h5 class="text-left" style="margin-bottom: 5px; font-weight: bolder;">Hvem er vi?</h5>
+        <p>Online Dugnad AS er etablert av tre innovative menn fra Trondheim. Dette er også de samme personene
+          som
+          jobber hver eneste dag for at du skal få den beste dugnadsopplevelsen noensinne!</p>
+      </div>
+    </div>
 
-      <p>Store innkjøp og små lager gjør at vi kan kutte prisene ned slik at dere får en høy fortjeneste, selv om
-        utsalgsprisen til deres kunder er lik butikkpris.</p>
-
-      <p>Høy kvalitet og produkter som vanligvis kjøpes inn flere ganger gjennom et år fører til fornøyde kunder og
-        store
-        muligheter for å iverksette en ny salgsrunde.</p>
-
-      <p>Si farvel til regneark, digitalt salgsskjema gjør hele salgsprossesen til en lek! Og om dere trenger hjelp til
-        noe som helst, så bistår vi når som helst.</p>
-
-      <p><b>Husk:</b> Vi tilbyr faktura med 3 uker betalingsfrist fra når varene er levert. Når dere fyller ut
-        salgsskjema så er salget gjort på forhånd og dere har god tid til å samle inn pengene før dere må betale.</p>
-
+    <div class="row justify-content-center" style="margin-top: 20px">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 text-center executive" *ngFor="let executive of executives">
+            <img class="img-fluid" src="/assets/images/executives/{{executive.image.url}}.jpg"
+                 alt="{{executive.image.alt}}"
+                 style="border-radius: 50%; border: 2px solid #dddddd; margin-bottom: 7px">
+            <p style="margin-bottom: 1px; font-weight: bolder">{{executive.name}}</p>
+            <p>{{executive.position}}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<app-footer></app-footer>
+  <app-call-to-action [image]="'computer.jpg'"
+                      [readMore]="true"
+                      [title]="'Digital dugnad gjør det enklere, både for deg og dine kunder'"
+                      [subTitle]="'Lett å lære - Uforpliktende - Risikofritt - Nye inntektsmuligheter'"
+  ></app-call-to-action>
+
+  <app-footer></app-footer>

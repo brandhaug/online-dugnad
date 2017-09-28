@@ -1,0 +1,11 @@
+#about-section {
+  margin-top: 60px;
+
+  .executive {
+    img {
+      @media (max-width: 575px) {
+        max-width: 200px;
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {environment} from '../../../environments/environment';
+import {ProductsService} from '../../services/products.service';
+import {FlashMessagesService} from 'angular2-flash-messages';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +11,13 @@ import {environment} from '../../../environments/environment';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  products: Observable<any[]>;
+
+  constructor(private productsService: ProductsService,
+              private flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
-    console.log(environment.crmBaseUrl);
+    this.products = this.productsService.getActiveProducts();
   }
 
 }

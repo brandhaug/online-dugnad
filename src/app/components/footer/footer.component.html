@@ -1,34 +1,38 @@
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h4 class="sub-title" style="text-align: left; font-size: 22px;">Vi ønsker å forbedre oss</h4>
-        <p>For å gi deg den beste dugnadsopplevelsen noensinne, trenger vi din hjelp! Om du har noen forslag til hvordan
-          vi kan bli bedre, ta kontakt med vår kundeservice nederst til høyre.</p>
+    <div id="footer-row">
+      <div id="info-col">
+        <h4>Dugnad</h4>
+        <p>Dugnad er et utpreget norsk ord, og er kåret til Norges nasjonalord i 2004. Dugnad betegnes som frivillig,
+          ulønnet arbeid for et fellesskap.</p> <p>Kvikk Dugnad tilbyr en enklere, digitalisert dugnad med lettsolgte produkter
+          som gir en høy fortjeneste til idrettslag, skoleklasser, russegrupper, russebusser og korps mm.</p>
       </div>
-      <div class="col-md-4">
-        <h4 class="sub-title" style="text-align: left; font-size: 22px;">Nyttige lenker</h4>
+      <div id="links-col">
+        <h4>Lenker</h4>
         <ul class="list-unstyled">
           <li>
             <a [routerLink]="['/']">Hjem</a>
           </li>
           <li>
-            <a [routerLink]="['/bestilling']">Bestilling</a>
+            <a [routerLink]="['/tips']">Tips</a>
           </li>
           <li>
-            <a [routerLink]="['/slik-fungerer-det']">Dugnad på 1-2-3</a>
-          </li>
-          <li>
-            <a [routerLink]="['/personlig-service']">Personlig service</a>
+            <a [routerLink]="['/digital-dugnad']">Digital dugnad</a>
           </li>
           <li>
             <a [routerLink]="['/om-oss']">Om oss</a>
           </li>
+          <li>
+            <a [routerLink]="['/personvern']">Personvern</a>
+          </li>
+          <li>
+            <a [routerLink]="['/vilkaar-og-betingelser']">Vilkår og betingelser</a>
+          </li>
         </ul>
       </div>
 
-      <div class="col-md-4">
-        <h4 class="sub-title" style="text-align: left; font-size: 22px;">Kontaktinformasjon</h4>
+      <div id="contact-col">
+        <h4>Kontakt</h4>
         <ul class="list-unstyled contact">
           <li>
             <a href="mailto:kundeservice@onlinedugnad.no">
@@ -36,7 +40,7 @@
             </a>
           </li>
           <li>
-            <i class="fa fa-phone"></i>926 27 081
+            <a href="tel:92627081"><i class="fa fa-phone"></i>926 27 081</a>
           </li>
           <li>
             <i class="fa fa-map-marker"></i>Thorvald Meyers gate 14, 0555 OSLO
@@ -45,10 +49,12 @@
       </div>
     </div>
 
+    <hr>
+
     <div class="row">
       <div class="col text-center">
-        <p>&copy; Alle rettigheter reservert - Online Dugnad AS<br>
-          Organisasjonsnummer: 917 884 544</p>
+        <span id="copyright">&copy; Alle rettigheter reservert - Online Dugnad AS<br>
+          Organisasjonsnummer: 917 884 544</span>
       </div>
     </div>
   </div>

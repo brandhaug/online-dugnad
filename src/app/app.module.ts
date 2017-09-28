@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home/home.component';
@@ -10,17 +9,12 @@ import {NavigationComponent} from './components/navigation/navigation.component'
 import {FooterComponent} from './components/footer/footer.component';
 import {HeaderComponent} from './components/header/header.component';
 import {ProductsComponent} from './components/products/products.component';
-import {NouisliderModule} from 'ng2-nouislider';
 import {ProfitCalculatorComponent} from './components/profit-calculator/profit-calculator.component';
 import {HowComponent} from './components/how/how.component';
-import {ServiceComponent} from './components/service/service.component';
 import {AboutComponent} from './components/about/about.component';
-import {OrderComponent} from './components/order/order.component';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {ProductsService} from './services/products.service';
 import {GlobalService} from './services/global.service';
-import {ShopComponent} from './components/shop/shop.component';
-import {CartComponent} from './components/cart/cart.component';
 import {TermsComponent} from './components/terms/terms.component';
 import {FormService} from './services/form.service';
 import {OrderSampleComponent} from './components/order-sample/order-sample.component';
@@ -28,10 +22,16 @@ import {SampleService} from './services/sample.service';
 import {Angulartics2Mixpanel, Angulartics2Module} from 'angulartics2';
 import {DigitalOrderFormComponent} from './components/digital-order-form/digital-order-form.component';
 import {OrderSampleButtonComponent} from './components/order-sample-button/order-sample-button.component';
-import {ProductModalComponent} from './components/product-modal/product-modal.component';
 import {ModalModule} from 'ngx-bootstrap';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { SystemRequestModalComponent } from './components/system-request-modal/system-request-modal.component';
+import {NouisliderModule} from 'ng2-nouislider/src/nouislider';
+import {ProductComponent} from './components/product/product.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ProductListComponent} from './components/product-list/product-list.component';
+import {PrivacyComponent} from './components/privacy/privacy.component';
+import {CallToActionComponent} from './components/call-to-action/call-to-action.component';
+import { SystemRequestComponent } from './components/system-request/system-request.component';
+import {LoadingService} from './services/loading.service';
 
 @NgModule({
   declarations: [
@@ -43,22 +43,21 @@ import { SystemRequestModalComponent } from './components/system-request-modal/s
     ProductsComponent,
     ProfitCalculatorComponent,
     HowComponent,
-    ServiceComponent,
     AboutComponent,
-    OrderComponent,
-    ShopComponent,
-    CartComponent,
     TermsComponent,
     OrderSampleComponent,
     DigitalOrderFormComponent,
     OrderSampleButtonComponent,
-    ProductModalComponent,
-    SystemRequestModalComponent
+    ProductComponent,
+    ProductListComponent,
+    PrivacyComponent,
+    CallToActionComponent,
+    SystemRequestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     routes,
     NouisliderModule,
     ReactiveFormsModule,
@@ -71,12 +70,10 @@ import { SystemRequestModalComponent } from './components/system-request-modal/s
     GlobalService,
     ProductsService,
     FormService,
-    SampleService
+    SampleService,
+    LoadingService
   ],
   entryComponents: [
-    OrderSampleComponent,
-    ProductModalComponent,
-    SystemRequestModalComponent
   ],
   bootstrap: [AppComponent]
 })

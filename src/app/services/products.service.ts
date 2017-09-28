@@ -1,17 +1,26 @@
 import {Injectable} from '@angular/core';
 import {GlobalService} from './global.service';
-import 'rxjs/Rx';
-import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class ProductsService {
 
-  constructor(private http: Http, private globalService: GlobalService) {
+  constructor(private http: HttpClient, private globalService: GlobalService) {
   }
 
-  getActiveProducts() {
-    return this.http.get('/api/products/active')
-      .map((res: Response) => res.json())
-      .catch((err: any) => this.globalService.handleServerError(err));
+  getActiveProducts(): Observable<any> {
+    const headers = new HttpHeaders().set('X-Requested-With', 'XMLHttpRequest');
+
+    return this.http.get(environment.crmBaseUrl + '/products/active', {headers: headers})
+      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+  }
+
+  getProductById(productId): Observable<any> {
+    const headers = new HttpHeaders().set('X-Requested-With', 'XMLHttpRequest');
+
+    return this.http.get(environment.crmBaseUrl + '/products/' + productId, {headers: headers})
+      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
 }

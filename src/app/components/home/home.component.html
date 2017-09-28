@@ -2,30 +2,12 @@
 
 <app-header></app-header>
 
-<app-products></app-products>
+<app-product-list [frontPage]="true" [products]="products"></app-product-list>
 
-<app-profit-calculator></app-profit-calculator>
-
-<div class="container-fluid" style="padding: 0; margin-top: 20px">
-  <div class="row" style="margin-top: 5px; padding: 40px 0;">
-    <div class="container">
-      <div class="col text-center">
-        <h4>Begynn med dugnaden i dag, enkelt og risikofritt</h4>
-        <p>Vi tilbyr både tradisjonelle og digitale bestillingsskjema for dine kunder</p>
-      </div>
-      <div class="row">
-        <!--<div class="col-md-6" style="padding: 10px;">-->
-        <!--<a href="#" class="btn btn-lg btn-secondary form-control" (click)="downloadForm()">Tradisjonelt-->
-        <!--bestillingsskjema</a>-->
-        <!--</div>-->
-        <div class="col text-center">
-          <a [routerLink]="['/digitalt-bestillingsskjema']" class="btn btn-lg btn-primary form-control" id="digital-button">
-            Digitalt
-            bestillingsskjema</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-call-to-action [image]="'computer.jpg'"
+                    [readMore]="true"
+                    [title]="'Digital dugnad gjør det enklere, både for deg og dine kunder'"
+                    [subTitle]="'Lett å lære - Uforpliktende - Risikofritt - Nye inntektsmuligheter'"
+></app-call-to-action>
 
 <app-footer></app-footer>

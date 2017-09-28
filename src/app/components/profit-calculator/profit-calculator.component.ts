@@ -101,14 +101,14 @@ export class ProfitCalculatorComponent implements OnInit {
     }
   }
 
-  downloadForm() {
-    this.formService.getForm().subscribe(res => {
-      const blob = new Blob([res], {type: 'application/pdf;charset=utf-8'});
-      saveAs(blob, 'test.pdf');
-      this.mixpanel.eventTrack('Downloaded form', null);
-    }, err => {
-      this.flashMessagesService.show('Noe gikk galt', {cssClass: 'alert-danger', timeout: 6000});
-    });
-  }
+  // downloadForm() {
+  //   this.formService.getForm().subscribe(res => {
+  //     const blob = new Blob([res], {type: 'application/pdf;charset=utf-8'});
+  //     saveAs(blob, 'test.pdf');
+  //     this.mixpanel.eventTrack('Downloaded form', null);
+  //   }, err => {
+  //     this.flashMessagesService.show('Noe gikk galt', {cssClass: 'alert-danger', timeout: 6000});
+  //   });
+  // }
 
 }

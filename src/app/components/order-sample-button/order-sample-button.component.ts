@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Angulartics2Mixpanel} from 'angulartics2';
-import {OrderSampleComponent} from '../order-sample/order-sample.component';
-import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order-sample-button',
@@ -11,10 +10,8 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 export class OrderSampleButtonComponent implements OnInit {
 
   products: any[];
-  bsModalRef: BsModalRef;
 
-
-  constructor(private modalService: BsModalService,
+  constructor(private router: Router,
               private mixpanel: Angulartics2Mixpanel) {
   }
 
@@ -22,8 +19,8 @@ export class OrderSampleButtonComponent implements OnInit {
   }
 
   openOrderSample() {
-    this.bsModalRef = this.modalService.show(OrderSampleComponent);
     this.mixpanel.eventTrack('Opened order sample', null);
+    this.router.navigate(['/gratis-vareprover']);
   }
 
 }

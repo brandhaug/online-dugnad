@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoadingService} from './services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  loading: boolean = false;
+
+  constructor(private loadingService: LoadingService) {
+    loadingService.loading.subscribe(res => {
+      this.loading = res;
+    });
+  }
+
+  onDeactivate() {
+    document.body.scrollTop = 0;
+  }
 }

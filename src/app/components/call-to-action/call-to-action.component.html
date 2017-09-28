@@ -1,0 +1,18 @@
+<section id="cta-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col text-center">
+        <h3 id="title">{{title}}</h3>
+        <h5 id="sub-title">{{subTitle}}</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center buttons">
+        <a [routerLink]="['/digital-dugnad']" class="btn btn-primary" *ngIf="readMore">
+          Les mer</a>
+        <a (click)="openSendSystemRequest()" href="javascript:void(0)" class="btn btn-success">
+          Sett i gang</a>
+      </div>
+    </div>
+  </div>
+</section>

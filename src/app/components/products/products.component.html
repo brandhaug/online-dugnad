@@ -1,28 +1,3 @@
-<div class="container" style="padding-top: 50px">
-  <h2 class="title">Produkter</h2>
-  <div class="row">
-    <div class="col text-center">
-      <ul class="list-inline" id="pros-list">
-        <li class="list-inline-item"><i class="fa fa-check"></i> Lett å selge</li>
-        <li class="list-inline-item"><i class="fa fa-check"></i> Lett å frakte</li>
-        <li class="list-inline-item"><i class="fa fa-check"></i> Returrett</li>
-        <li class="list-inline-item"><i class="fa fa-check"></i> God fortjeneste</li>
-      </ul>
-    </div>
-  </div>
+<app-navigation></app-navigation>
 
-  <div class="row" id="products-row">
-    <div class="col-md-4 col-sm-6 text-center product-col" *ngFor="let product of products">
-      <div class="product" (click)="openProduct(product)">
-        <img class="img-fluid" src="{{product.images[0].url}}" alt="{{product.images[0].alt}}">
-        <h5 style="margin-bottom: 0px; font-weight: 300;">{{product.name}}</h5>
-        <p style="color: #777;">{{product.caption}}</p>
-        <hr>
-        <b>Dere tjener {{product.profit2 / 100}},-</b>
-        <p>Anbefalt salgspris {{product.price2 / 100}},-</p>
-
-        <span class="click-to-show">Trykk for å vise detaljer</span>
-      </div>
-    </div>
-  </div>
-</div>
+<app-product-list [products]="products"></app-product-list>

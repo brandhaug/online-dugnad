@@ -1,0 +1,30 @@
+<section id="product-section">
+  <div class="container">
+    <h2 class="title">Produkter</h2>
+    <div class="row">
+      <div class="col text-center">
+        <ul class="list-inline" id="pros-list">
+          <li class="list-inline-item"><i class="fa fa-check"></i> Lett å selge</li>
+          <li class="list-inline-item"><i class="fa fa-check"></i> Lett å frakte</li>
+          <li class="list-inline-item"><i class="fa fa-check"></i> Returrett</li>
+          <li class="list-inline-item"><i class="fa fa-check"></i> God fortjeneste</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row" id="products-row">
+      <div class="col-md-4 col-6 text-center product-col" *ngFor="let product of products | async">
+        <div class="product" (click)="openProduct(product)">
+          <img class="img-fluid" src="{{product.images[0].url}}" alt="{{product.images[0].alt}}">
+          <div class="product-name">{{product.name}}</div>
+          <div class="product-caption">{{product.caption}}</div>
+          <hr>
+          <div class="product-profit"><b>Dere tjener {{product.profit2 / 100}},-</b></div>
+          <div class="product-price">Anbefalt salgspris {{product.price2 / 100}},-</div>
+
+          <button class="btn btn-secondary">Vis detaljer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
