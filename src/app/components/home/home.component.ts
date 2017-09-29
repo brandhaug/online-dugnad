@@ -18,8 +18,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const kvikk = JSON.parse(localStorage.getItem('kvikk'));
 
-    if (kvikk !== null &&  kvikk.russ === true) {
-      this.router.navigate(['/russ']);
+    if (kvikk !== null) {
+      if (kvikk.russ === true) {
+        this.router.navigate(['/russ']);
+      } else if (kvikk.school === true) {
+        this.router.navigate(['/skole']);
+      }
     } else {
       this.router.navigate(['/']);
     }

@@ -32,6 +32,7 @@ import { SystemRequestComponent } from './components/system-request/system-reque
 import {LoadingService} from './services/loading.service';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { RussComponent } from './components/russ/russ.component';
+import { SchoolComponent } from './components/school/school.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { RussComponent } from './components/russ/russ.component';
     CallToActionComponent,
     SystemRequestComponent,
     ContactMeComponent,
-    RussComponent
+    RussComponent,
+    SchoolComponent
   ],
   imports: [
     BrowserModule,

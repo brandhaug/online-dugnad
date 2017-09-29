@@ -11,6 +11,7 @@ import {OrderSampleComponent} from './components/order-sample/order-sample.compo
 import {SystemRequestComponent} from './components/system-request/system-request.component';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
 import {RussComponent} from './components/russ/russ.component';
+import {SchoolComponent} from './components/school/school.component';
 
 export const router: Routes = [{
   path: '',
@@ -40,12 +41,15 @@ export const router: Routes = [{
 }, {
   path: 'sett-i-gang',
   component: SystemRequestComponent
-},{
+}, {
   path: 'kontakt-meg',
   component: ContactMeComponent
 }, {
   path: 'russ',
   component: RussComponent
+}, {
+  path: 'skole',
+  component: SchoolComponent
 }, {
   path: '**',
   redirectTo: ''
