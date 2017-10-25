@@ -10,7 +10,8 @@ import {Router} from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() frontPage: true;
+  @Input() frontPage: boolean;
+  @Input() shop: boolean;
   @Input() products: Observable<any[]>;
 
   constructor(private router: Router,
@@ -21,6 +22,11 @@ export class ProductListComponent implements OnInit {
 
   openProduct(product){
     this.mixpanel.eventTrack('Opened product', product);
-    this.router.navigate(['/produkter', product._id]);
+
+    if (!this.shop) {
+      this.router.navigate(['/produkter', product.url]);
+    } else {
+      this.router.navigate(['/dugnad/' + localStorage.getItem('club') + '/produkter/', product.url]);
+    }
   }
 }

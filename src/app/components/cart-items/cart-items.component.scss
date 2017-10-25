@@ -1,0 +1,58 @@
+@import "../../../assets/styles/variables";
+
+#list-cart {
+  .cart-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color;
+    .img-container {
+      flex-basis: 50px;
+
+      img {
+        width: 40px;
+      }
+    }
+
+    .content-container {
+      flex: 1;
+
+      .title {
+      }
+
+      .size {
+      }
+
+      .quantity-container {
+        .quantity {
+          margin: 0 5px;
+        }
+      }
+
+      .price {
+
+      }
+    }
+  }
+}
+
+#amounts-table {
+  tr {
+    td {
+      border: 0;
+      padding: 2px;
+
+      &.price {
+        text-align: right;
+      }
+
+      &#shipping-price {
+        padding-right: 6px;
+      }
+    }
+  }
+
+  #total-row {
+    padding-top: 3px;
+    font-weight: bold;
+  }
+}

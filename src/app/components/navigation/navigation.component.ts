@@ -12,6 +12,9 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('club') !== null) {
+      localStorage.removeItem('club');
+    }
   }
 
   navigateHome() {

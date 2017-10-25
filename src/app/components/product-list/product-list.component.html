@@ -19,8 +19,9 @@
           <div class="product-name">{{product.name}}</div>
           <div class="product-caption">{{product.caption}}</div>
           <hr>
-          <div class="product-profit"><b>Dere tjener {{product.profit2 / 100}},-</b></div>
-          <div class="product-price">Anbefalt salgspris {{product.price2 / 100}},-</div>
+          <div class="product-profit" *ngIf="!shop"><b>Dere tjener {{product.profit2 / 100}},-</b></div>
+          <div class="product-profit" *ngIf="shop"><b>Du støtter {{product.profit2 / 100}},-</b></div>
+          <div class="product-price">{{product.price2 / 100}},-</div>
 
           <button class="btn btn-secondary">Vis detaljer</button>
         </div>

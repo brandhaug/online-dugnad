@@ -3,6 +3,7 @@
 @import "assets/styles/loader";
 @import "assets/styles/buttons";
 @import "assets/styles/modals";
+@import "assets/styles/forms";
 
 html, body {
   font-family: 'Montserrat', sans-serif;
@@ -91,3 +92,26 @@ h6 {
   }
 }
 
+.no-max-width {
+  width: 100%;
+  max-width: none;
+}
+
+accordion-group {
+  .card {
+    border-radius: 0;
+    border: 1px solid $border-color;
+
+    .panel-heading {
+      cursor: pointer;
+      border: 0;
+      border-radius: 0;
+    }
+  }
+
+  &.panel-open {
+    .panel-heading {
+      border-bottom: 1px solid $border-color !important;
+    }
+  }
+}

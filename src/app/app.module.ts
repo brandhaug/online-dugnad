@@ -28,11 +28,25 @@ import {HttpClientModule} from '@angular/common/http';
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {PrivacyComponent} from './components/privacy/privacy.component';
 import {CallToActionComponent} from './components/call-to-action/call-to-action.component';
-import { SystemRequestComponent } from './components/system-request/system-request.component';
+import {SystemRequestComponent} from './components/system-request/system-request.component';
 import {LoadingService} from './services/loading.service';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
-import { RussComponent } from './components/russ/russ.component';
-import { SchoolComponent } from './components/school/school.component';
+import {ContactMeComponent} from './components/contact-me/contact-me.component';
+import {RussComponent} from './components/russ/russ.component';
+import {SchoolComponent} from './components/school/school.component';
+import { LoginComponent } from './components/login/login.component';
+import {AuthenticationService} from './services/authentication.service';
+import { ShopComponent } from './components/shop/shop.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ShopNavigationComponent } from './components/shop-navigation/shop-navigation.component';
+import {CustomPreloadingStrategy} from './custom-preloading-strategy';
+import { CartItemsComponent } from './components/cart-items/cart-items.component';
+import {CartService} from './services/cart.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CheckoutFormComponent } from './components/checkout-form/checkout-form.component';
+import {AccordionModule} from 'ngx-bootstrap';
+import {PostalPlaceService} from './services/postal-place.service';
+import {ReservationsService} from './services/reservations.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +70,14 @@ import { SchoolComponent } from './components/school/school.component';
     SystemRequestComponent,
     ContactMeComponent,
     RussComponent,
-    SchoolComponent
+    SchoolComponent,
+    LoginComponent,
+    ShopComponent,
+    CartComponent,
+    ShopNavigationComponent,
+    CartItemsComponent,
+    CheckoutComponent,
+    CheckoutFormComponent
   ],
   imports: [
     BrowserModule,
@@ -66,17 +87,23 @@ import { SchoolComponent } from './components/school/school.component';
     NouisliderModule,
     ReactiveFormsModule,
     FlashMessagesModule,
-    Angulartics2Module.forRoot([Angulartics2Mixpanel])
+    BrowserAnimationsModule,
+    Angulartics2Module.forRoot([Angulartics2Mixpanel]),
+    AccordionModule.forRoot()
   ],
   providers: [
     GlobalService,
     ProductsService,
     FormService,
     SampleService,
-    LoadingService
+    LoadingService,
+    AuthenticationService,
+    CustomPreloadingStrategy,
+    CartService,
+    PostalPlaceService,
+    ReservationsService
   ],
-  entryComponents: [
-  ],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

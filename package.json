@@ -14,9 +14,9 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.4.3",
+    "@angular/cli": "1.5.0-rc.0",
     "@angular/common": "^4.4.3",
     "@angular/compiler": "^4.4.3",
-    "@angular/cli": "1.4.2",
     "@angular/core": "^4.4.3",
     "@angular/forms": "^4.4.3",
     "@angular/http": "^4.4.3",
@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^4.4.3",
     "@angular/router": "^4.0.0",
     "angular2-flash-messages": "^1.0.8",
+    "angular2-jwt": "^0.2.3",
     "angulartics2": "^2.4.0",
     "body-parser": "^1.17.2",
     "bootstrap": "^4.0.0-beta",
@@ -39,6 +40,7 @@
     "mongoose": "^4.11.1",
     "mongoose-auto-increment": "^5.0.1",
     "ng2-nouislider": "^1.7.0",
+    "ngx-bootstrap": "^1.9.3",
     "nodemailer": "^4.0.1",
     "nodemailer-express-handlebars": "^2.0.0",
     "nouislider": "^10.0.0",
@@ -52,7 +54,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.4.2",
+    "@angular/cli": "1.5.0-rc.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",

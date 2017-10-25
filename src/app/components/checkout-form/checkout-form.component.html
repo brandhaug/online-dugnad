@@ -1,0 +1,122 @@
+<form role="form" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+  <div class="form-group">
+    <div class="float-label-container">
+      <input type="text"
+             class="form-control form-control-lg"
+             formControlName="name"
+             id="name"
+             placeholder="Navn"
+             data-hj-masked>
+      <label for="name">Navn</label>
+
+      <div *ngIf="myForm.get('name').touched" class="errors">
+        <small class="error" *ngIf="myForm.get('name').hasError('required')">
+          Krevd
+        </small>
+        <small class="error" *ngIf="myForm.get('name').hasError('minlength')">
+          For kort
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="float-label-container">
+      <input type="text"
+             id="address"
+             class="form-control form-control-lg"
+             formControlName="address"
+             placeholder="Adresse"
+             data-hj-masked>
+      <label for="address">Adresse</label>
+      <div *ngIf="myForm.get('address').touched" class="errors">
+        <small class="error" *ngIf="myForm.get('address').hasError('required')">Krevd</small>
+        <small class="error" *ngIf="myForm.get('address').hasError('minlength')">For kort</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-5 form-col">
+      <div class="float-label-container">
+        <input type="tel"
+               id="zipCode"
+               class="form-control form-control-lg"
+               formControlName="zipCode"
+               placeholder="Postnummer">
+        <label for="zipCode">Postnummer</label>
+        <div *ngIf="myForm.get('zipCode').touched" class="errors">
+          <small class="error" *ngIf="myForm.get('zipCode').hasError('required')">Krevd</small>
+          <small class="error" *ngIf="myForm.get('zipCode').hasError('minlength')">For kort</small>
+          <small class="error" *ngIf="myForm.get('zipCode').hasError('maxlength')">For langt</small>
+          <small class="error" *ngIf="myForm.get('zipCode').hasError('pattern')">Ikke gyldig
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 form-col">
+      <div class="float-label-container">
+        <input type="text"
+               class="form-control form-control-lg"
+               formControlName="postalPlace"
+               placeholder="Poststed">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" data-hj-masked>
+    <div class="float-label-container">
+      <input type="email"
+             id="email"
+             class="form-control form-control-lg"
+             formControlName="email"
+             placeholder="E-post">
+      <label for="email">E-post</label>
+      <div *ngIf="myForm.get('email').touched" class="errors">
+        <small class="error" *ngIf="myForm.get('email').hasError('required')">Krevd</small>
+        <small class="error" *ngIf="myForm.get('email').hasError('minlength')">For kort</small>
+        <small class="error" *ngIf="myForm.get('email').hasError('pattern')">Ikke gyldig
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="float-label-container">
+      <input type="tel"
+             class="form-control form-control-lg"
+             formControlName="phoneNumber"
+             id="phoneNumber"
+             placeholder="Telefonnummer"
+             data-hj-masked>
+      <label for="phoneNumber">Telefonnummer</label>
+      <div *ngIf="myForm.get('phoneNumber').touched" class="errors">
+        <small class="error" *ngIf="myForm.get('phoneNumber').hasError('required')">Krevd</small>
+        <small class="error" *ngIf="myForm.get('phoneNumber').hasError('minlength')">For kort
+        </small>
+        <small class="error" *ngIf="myForm.get('phoneNumber').hasError('maxlength')">For langt</small>
+        <small class="error" *ngIf="myForm.get('phoneNumber').hasError('pattern')">Ikke gyldig
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="float-label-container">
+      <input type="text"
+             id="seller"
+             class="form-control form-control-lg"
+             formControlName="seller"
+             placeholder="Selger"
+             data-hj-masked>
+      <label for="seller">Selger</label>
+      <div *ngIf="myForm.get('seller').touched" class="errors">
+        <small class="error" *ngIf="myForm.get('seller').hasError('required')">Krevd</small>
+        <small class="error" *ngIf="myForm.get('seller').hasError('minlength')">For kort</small>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-submit-form no-max-width">Reservér</button>
+  </div>
+</form>

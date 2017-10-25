@@ -1,0 +1,39 @@
+<ul class="list-unstyled" id="list-cart" *ngIf="cart">
+  <li *ngFor="let item of cart.items" class="cart-item">
+    <div class="img-container">
+      <img src="{{item.image.url}}" alt="{{item.image.alt}}">
+    </div>
+    <div class="content-container">
+      <div class="name">{{item.name}}</div>
+      <div class="size">{{item.sku.color}} ({{item.sku.size}})</div>
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="quantity-container">
+            <button type="button" class="btn btn-sm btn-light" (click)="subtractQuantity(item)"><i
+              class="fa fa-minus"></i>
+            </button>
+            <span class="quantity">{{item.quantity}}</span>
+            <button type="button" class="btn btn-sm btn-light"
+                    (click)="addQuantity(item)"><i
+              class="fa fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="col text-right">
+          <span class="price">{{item.subTotalAmount / 100}},-</span>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+<table class="table" id="amounts-table">
+  <tr id="profit-row">
+    <td id="profit">Du støtter</td>
+    <td id="profit-value" class="price">{{cart.totalProfit / 100}},-</td>
+  </tr>
+  <tr id="total-row">
+    <td id="total">Total</td>
+    <td id="total-price" class="price">{{cart.totalAmount / 100}},-</td>
+  </tr>
+</table>

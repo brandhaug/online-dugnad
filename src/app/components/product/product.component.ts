@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {ProductsService} from '../../services/products.service';
 import {ActivatedRoute} from '@angular/router';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -13,10 +14,8 @@ export class ProductComponent implements OnInit, OnDestroy {
   product: any;
   cartEnabled: boolean = false;
 
-  quantity = 1;
   sizes: string[] = [];
   colors: string[] = [];
-  plans: any[] = [];
   selectedSize: string;
   selectedColor: string;
   selectedImage: {
@@ -28,17 +27,24 @@ export class ProductComponent implements OnInit, OnDestroy {
   alerts: any[];
   cart: any;
   routeSub: any;
+  loading = true;
+  club: any;
 
   constructor(private flashMessagesService: FlashMessagesService,
               private productsService: ProductsService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private cartService: CartService) {
   }
 
   ngOnInit() {
-    this.routeSub = this.route.params.subscribe(params => {
-      const productId = params['productId'];
+    this.club = localStorage.getItem('club');
 
-      this.productsService.getProductById(productId).subscribe(product => {
+    if (this.club !== null) {
+      this.cartEnabled = true;
+    }
+
+    this.routeSub = this.route.params.subscribe(params => {
+      this.productsService.getProductByUrl(params['productUrl']).subscribe(product => {
         this.product = product;
 
         this.generateColorsAndSizes();
@@ -51,6 +57,7 @@ export class ProductComponent implements OnInit, OnDestroy {
         }
         this.selectImage(this.product.images[0]);
       });
+      this.loading = false;
     });
   }
 
@@ -134,37 +141,29 @@ export class ProductComponent implements OnInit, OnDestroy {
     }
   }
 
-  // addItem() {
-  //   let error = false;
-  //
-  //   if (this.colors.length && !this.selectedColor) {
-  //     this.flashMessagesService.show('Oisann! Du må velge farge', {cssClass: 'alert-danger', timeout: 6000});
-  //     error = true;
-  //   }
-  //   if (this.sizes.length && !this.selectedSize) {
-  //     this.flashMessagesService.show('Oisann! Du må velge størrelse', {cssClass: 'alert-danger', timeout: 6000});
-  //     error = true;
-  //   }
-  //   if (this.quantity <= 0 || this.quantity >= 50) {
-  //     this.flashMessagesService.show('Oisann! Ugyldig antall', {cssClass: 'alert-danger', timeout: 6000});
-  //     error = true;
-  //   }
-  //
-  //   if (!error) {
-  //     const item = {
-  //       product: this.product,
-  //       sku: this.findSku(),
-  //       plan: this.selectedPlan,
-  //       quantity: this.quantity
-  //     };
-  //
-  //     this.cartService.addItem(item);
-  //     this.cart = this.cartService.getCart();
-  //     this.flashMessagesService.show(item.product.name + ' lagt i handlekurven.', {
-  //       cssClass: 'alert-success',
-  //       timeout: 4000
-  //     });
-  //   }
-  // }
+  addToCart() {
+    let error = false;
 
+    if (this.colors.length && !this.selectedColor) {
+      this.flashMessagesService.show('Oisann! Du må velge farge', {cssClass: 'alert-danger', timeout: 6000});
+      error = true;
+    }
+    if (this.sizes.length && !this.selectedSize) {
+      this.flashMessagesService.show('Oisann! Du må velge størrelse', {cssClass: 'alert-danger', timeout: 6000});
+      error = true;
+    }
+
+    if (error) {
+      return;
+    }
+
+    this.cartService.addItem({
+      name: this.product.name,
+      price: this.product.price2,
+      profit: this.product.profit2,
+      sku: this.findSku(),
+      quantity: 1,
+      image: this.product.images[0],
+    });
+  }
 }

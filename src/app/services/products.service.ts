@@ -17,10 +17,10 @@ export class ProductsService {
       .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
 
-  getProductById(productId): Observable<any> {
+  getProductByUrl(url): Observable<any> {
     const headers = new HttpHeaders().set('X-Requested-With', 'XMLHttpRequest');
 
-    return this.http.get(environment.crmBaseUrl + '/products/' + productId, {headers: headers})
+    return this.http.get(environment.crmBaseUrl + '/products/url/' + url, {headers: headers})
       .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
 }

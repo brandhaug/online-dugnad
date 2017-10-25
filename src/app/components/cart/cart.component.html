@@ -1,0 +1,35 @@
+<div id="cart-button-container" *ngIf="!cartOpened">
+  <button (click)="cartOpened = true;">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="total-items" class="badge badge-primary">{{cart.totalItems}}</span>
+  </button>
+</div>
+
+<section id="cart" *ngIf="cartOpened" [@cartAnimation]>
+  <div class="mobile-header-container">
+    <div class="row justify-content-between mobile-header-row">
+      <div class="col">
+        <h5 class="mobile-title">Handlekurv</h5>
+      </div>
+      <div class="col-2 text-right">
+        <span class="close" (click)="cartOpened = false">&times;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-body-container">
+  <span id="empty-cart" *ngIf="!cart.items || !cart.items.length">
+    Handlekurven er tom.
+  </span>
+
+    <div *ngIf="cart.items && cart.items.length">
+      <app-cart-items [cart]="cart"></app-cart-items>
+
+      <div class="row">
+        <div class="col text-center">
+          <a class="btn btn-primary no-max-width" [routerLink]="['/dugnad/' + club + '/reserver']">Gå videre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

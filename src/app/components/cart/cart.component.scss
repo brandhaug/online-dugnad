@@ -1,0 +1,82 @@
+@import "../../../assets/styles/variables";
+
+#cart-button-container {
+  right: 15px;
+  z-index: 1030;
+  button {
+    #total-items {
+      position: absolute;
+      right: -3px;
+      top: -3px;
+      padding: 3px 5px;
+      border-radius: 50%;
+    }
+  }
+}
+
+#cart {
+  z-index: 1031;
+  right: 0;
+  border-left: 1px solid #dddddd;
+  background-color: white;
+
+  #checkout-info-row {
+    margin-top: 20px;
+  }
+}
+
+#cart-button-container, #navigation-button-container {
+  position: fixed;
+  top: 60px;
+  text-align: center;
+
+  button {
+    background-color: $primary-color;
+    position: relative;
+    border-radius: 10px;
+    display: block;
+    padding: 10px 12px;
+    color: white;
+    border: 0;
+
+    i {
+      font-size: 25px;
+    }
+  }
+}
+
+#cart, #mobile-navigation {
+  position: fixed;
+  top: 44px;
+  width: 320px;
+  height: calc(100vh - 44px);
+  background-color: $secondary-color;
+  font-size: 16px;
+
+  .mobile-header-container {
+    padding: 5px 15px;
+
+    .mobile-header-row {
+      border-bottom: 1px solid $border-color;
+      padding: 3px 0;
+      align-items: center;
+
+      .mobile-title {
+        font-weight: 100;
+        margin: 5px 0;
+      }
+
+      .close {
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  .mobile-body-container {
+    padding: 5px 15px;
+    overflow-y: auto;
+    height: 100%;
+  }
+}

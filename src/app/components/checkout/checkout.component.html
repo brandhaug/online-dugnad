@@ -1,0 +1,27 @@
+<app-shop-navigation></app-shop-navigation>
+
+<div class="container">
+  <div class="row justify-content-center centered-container">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+      <accordion *ngIf="cart">
+        <accordion-group #cartAccordion>
+          <div accordion-heading>
+            Handlekurv
+            <span class="pull-right">
+              {{cart.totalAmount / 100}},-
+            </span>
+          </div>
+          <app-cart-items [cart]="cart"></app-cart-items>
+        </accordion-group>
+
+        <accordion-group [isOpen]="true">
+          <div accordion-heading>
+            Leveringsinformasjon
+          </div>
+          <app-checkout-form [cart]="cart"></app-checkout-form>
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
+</div>
+

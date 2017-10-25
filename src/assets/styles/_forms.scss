@@ -1,0 +1,120 @@
+@import "variables";
+
+.form-group {
+  text-transform: none;
+  margin-bottom: 0;
+
+  .form-control, .form-control-lg {
+    border: 1px solid #dddddd;
+    border-radius: 0;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  &:first-of-type {
+    .form-control, .form-control-lg {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+  }
+
+  .btn-submit-form {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 0;
+    height: 46px;
+  }
+
+  &.row {
+    margin: 0;
+
+    .form-col {
+      padding: 0;
+
+      &:first-of-type {
+        .form-control, .form.control-lg {
+          //border-right: 0;
+        }
+      }
+
+    }
+  }
+
+  .float-label-container {
+    position: relative;
+
+    label {
+      font-size: 11px;
+      opacity: 0;
+      -webkit-transition: all .3s ease-in;
+      -moz-transition: all .3s ease-in;
+      -ms-transition: all .3s ease-in;
+      -o-transition: all .3s ease-in;
+      transition: all .3s ease-in;
+      position: absolute;
+      left: 17px;
+      top: 10px;
+    }
+
+    .errors {
+      position: absolute;
+      top: 13px;
+      right: 17px;
+    }
+
+    .form-control-lg {
+      font-size: 16px;
+      height: 46px;
+      -webkit-transition: all .3s ease-in;
+      transition: all .3s ease-in;
+      -moz-transition: all .3s ease-in;
+      -ms-transition: all .3s ease-in;
+
+      &::-webkit-input-placeholder {
+        -webkit-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+      }
+      &:-moz-placeholder {
+        -moz-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+      }
+      &::-moz-placeholder {
+        -moz-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+      }
+      &:-ms-input-placeholder {
+        -ms-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+      }
+      &:focus {
+        padding: 17px 10px 5px 16px;
+        border: 1px solid $primary-color;
+
+        &::-webkit-input-placeholder {
+          color: transparent;
+        }
+        &:-moz-placeholder {
+          color: transparent;
+        }
+        &::-moz-placeholder {
+          color: transparent;
+        }
+        &:-ms-input-placeholder {
+          color: transparent;
+        }
+      }
+
+      &:focus + label {
+        opacity: 1;
+        top: 4px;
+      }
+    }
+
+    textarea.form-control-lg {
+      height: 200px;
+    }
+  }
+}

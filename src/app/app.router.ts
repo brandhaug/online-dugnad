@@ -12,11 +12,16 @@ import {SystemRequestComponent} from './components/system-request/system-request
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
 import {RussComponent} from './components/russ/russ.component';
 import {SchoolComponent} from './components/school/school.component';
+import {CustomPreloadingStrategy} from './custom-preloading-strategy';
+import {LoginComponent} from './components/login/login.component';
+import {ShopComponent} from './components/shop/shop.component';
+import {CartComponent} from './components/cart/cart.component';
+import {CheckoutComponent} from './components/checkout/checkout.component';
 
 export const router: Routes = [{
   path: '',
   pathMatch: 'full',
-  component: HomeComponent
+  component: HomeComponent,
 }, {
   path: 'tips',
   component: HowComponent
@@ -27,7 +32,7 @@ export const router: Routes = [{
   path: 'digital-dugnad',
   component: DigitalOrderFormComponent
 }, {
-  path: 'produkter/:productId',
+  path: 'produkter/:productUrl',
   component: ProductComponent
 }, {
   path: 'vilkaar-og-betingelser',
@@ -51,8 +56,26 @@ export const router: Routes = [{
   path: 'skole',
   component: SchoolComponent
 }, {
+  path: 'dugnad/:clubUrl',
+  children: [{
+    path: '',
+    component: ShopComponent
+  }, {
+    path: 'logg-inn',
+    component: LoginComponent
+  }, {
+    path: 'handlekurv',
+    component: CartComponent
+  }, {
+    path: 'produkter/:productUrl',
+    component: ProductComponent
+  }, {
+    path: 'reserver',
+    component: CheckoutComponent
+  }]
+}, {
   path: '**',
   redirectTo: ''
 }];
 
-export const routes: ModuleWithProviders = RouterModule.forRoot(router);
+export const routes: ModuleWithProviders = RouterModule.forRoot(router, {preloadingStrategy: CustomPreloadingStrategy});

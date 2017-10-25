@@ -19,6 +19,7 @@ const productSchema = new Schema({
   profit2: Number,
   price: Number,
   price2: Number,
+  url: String,
   active: Boolean,
   vatPercent: Number,
   subGroup: Number,

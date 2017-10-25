@@ -1,0 +1,21 @@
+#login-logo {
+  width: 100px;
+  margin: 0 auto 20px auto;
+}
+
+.centered-container {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.lonely-form-container {
+  max-width: 450px;
+  margin: 0 auto;
+  width: 100%;
+
+  .jumbotron {
+    padding: 2rem;
+  }
+}

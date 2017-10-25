@@ -1,4 +1,6 @@
-<app-navigation></app-navigation>
+<app-navigation *ngIf="!club && !loading"></app-navigation>
+<app-shop-navigation *ngIf="club && !loading"></app-shop-navigation>
+<app-cart *ngIf="club && !loading"></app-cart>
 
 <section id="product-detail-section" *ngIf="product">
   <div class="container">
@@ -17,8 +19,10 @@
         <b>{{product.caption}}</b>
         <p style="white-space: pre-wrap">{{product.description}}</p>
 
-        <b>Dere tjener {{product.profit2 / 100}},-</b>
-        <p>Anbefalt salgspris {{product.price2 / 100}},-</p>
+        <b *ngIf="!club">Dere tjener {{product.profit2 / 100}},-</b>
+        <b *ngIf="club">Du støtter {{product.profit2 / 100}},-</b>
+        <p *ngIf="!club">Anbefalt salgspris {{product.price2 / 100}},-</p>
+        <p *ngIf="club">Pris {{product.price2 / 100}},-</p>
 
         <button class="btn btn-secondary" (click)="openSizeGuide(product)"
                 *ngIf="product.name == 'Hipstertruser (3-pack)' || product.name == 'Boxershorts (3-pack)'"><i
@@ -129,39 +133,20 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div *ngIf="cartEnabled">
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-xs-8 text-center">
-          <div class="form-group">
-            <label>Antall</label>
-            <div class="row">
-              <div class="col text-center">
-                <button type="button" class="btn btn-secondary" (click)="quantity = quantity-1"><i class="fa fa-minus"
-                                                                                                   style="margin: 0"></i>
-                </button>
-                <span style="font-size: 20px; margin-left: 10px; margin-right: 10px;">{{quantity}}</span>
-                <button type="button" class="btn btn-secondary"
-                        (click)="quantity = quantity+1"><i
-                  class="fa fa-plus" style="margin: 0"></i></button>
-              </div>
+        <div *ngIf="cartEnabled">
+          <div class="row" style="margin: 10px 0 20px 0;">
+            <div class="col text-center">
+              <button class="btn btn-primary" (click)="addToCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Legg
+                i handlekurv
+              </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="row" style="margin-top: 10px;">
-        <div class="col text-center">
-          <button class="btn btn-primary" (click)="addItem()"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            Legg
-            i handlekurv
-          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<app-footer></app-footer>
+<app-footer *ngIf="!club && !loading"></app-footer>
