@@ -18,15 +18,16 @@ export class ProductListComponent implements OnInit {
               private mixpanel: Angulartics2Mixpanel) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  openProduct(product){
+  openProduct(product) {
     this.mixpanel.eventTrack('Opened product', product);
 
     if (!this.shop) {
       this.router.navigate(['/produkter', product.url]);
     } else {
-      this.router.navigate(['/dugnad/' + localStorage.getItem('club') + '/produkter/', product.url]);
+      this.router.navigate(['/dugnad/' + JSON.parse(localStorage.getItem('club')).url + '/produkter/', product.url]);
     }
   }
 }

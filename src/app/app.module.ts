@@ -47,6 +47,8 @@ import { CheckoutFormComponent } from './components/checkout-form/checkout-form.
 import {AccordionModule} from 'ngx-bootstrap';
 import {PostalPlaceService} from './services/postal-place.service';
 import {ReservationsService} from './services/reservations.service';
+import {ClubsService} from './services/clubs.service';
+import {SellersService} from './services/sellers.service';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import {ReservationsService} from './services/reservations.service';
     CustomPreloadingStrategy,
     CartService,
     PostalPlaceService,
-    ReservationsService
+    ReservationsService,
+    ClubsService,
+    SellersService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../services/cart.service';
 import {Cart} from '../../interfaces/cart';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -31,13 +32,12 @@ export class CartComponent implements OnInit {
   cart: Cart;
   cartOpened = false;
   loading = false;
-  club: any;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService,
+              private router: Router) {
   }
 
   ngOnInit() {
-    this.club = localStorage.getItem('club');
 
 
     this.cart = this.cartService.getCart();
@@ -49,5 +49,9 @@ export class CartComponent implements OnInit {
         this.cartOpened = true;
       }
     });
+  }
+
+  navigateToCheckout() {
+    this.router.navigate(['/dugnad/' + JSON.parse(localStorage.getItem('club')).url + '/reserver']);
   }
 }

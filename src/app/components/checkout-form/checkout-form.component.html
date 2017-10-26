@@ -1,4 +1,4 @@
-<form role="form" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+<form role="form" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate *ngIf="myForm">
   <div class="form-group">
     <div class="float-label-container">
       <input type="text"
@@ -103,12 +103,15 @@
 
   <div class="form-group">
     <div class="float-label-container">
-      <input type="text"
-             id="seller"
+      <select id="seller"
              class="form-control form-control-lg"
              formControlName="seller"
-             placeholder="Selger"
              data-hj-masked>
+        <option value="" disabled [selected]="!sellerSelected">Selger</option>
+        <option *ngFor="let seller of sellers" [value]="seller._id">
+          {{seller.name}}
+        </option>
+      </select>
       <label for="seller">Selger</label>
       <div *ngIf="myForm.get('seller').touched" class="errors">
         <small class="error" *ngIf="myForm.get('seller').hasError('required')">Krevd</small>
