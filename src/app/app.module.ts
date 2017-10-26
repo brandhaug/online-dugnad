@@ -49,6 +49,7 @@ import {PostalPlaceService} from './services/postal-place.service';
 import {ReservationsService} from './services/reservations.service';
 import {ClubsService} from './services/clubs.service';
 import {SellersService} from './services/sellers.service';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import {SellersService} from './services/sellers.service';
     ShopNavigationComponent,
     CartItemsComponent,
     CheckoutComponent,
-    CheckoutFormComponent
+    CheckoutFormComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +107,7 @@ import {SellersService} from './services/sellers.service';
     PostalPlaceService,
     ReservationsService,
     ClubsService,
-    SellersService
+    SellersService,
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

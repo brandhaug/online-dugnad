@@ -17,4 +17,9 @@ export class ReservationsService {
     return this.http.post(environment.crmBaseUrl + '/reservations', body)
       .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
+
+  getAdminPanel(clubId): Observable<any> {
+    return this.http.get(environment.crmBaseUrl + '/clubs/' + clubId + '/reservations/admin')
+      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+  }
 }

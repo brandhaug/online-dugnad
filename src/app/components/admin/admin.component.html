@@ -1,0 +1,77 @@
+<app-shop-navigation></app-shop-navigation>
+
+<div class="container" style="margin-top: 40px;">
+  <div *ngIf="reservations">
+    <h2>Bestillinger</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Kunde</td>
+        <td>Selger</td>
+        <td>Ordrelinjer</td>
+        <td>Fortjeneste</td>
+        <td>Pris</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>
+          <div>{{reservation.customer.name}}</div>
+          <div>{{reservation.customer.address}}</div>
+          <div>{{reservation.customer.phoneNumber}}</div>
+          <div>{{reservation.customer.email}}</div>
+        </td>
+        <td>{{reservation.seller.name}}</td>
+        <td>
+          <div *ngFor="let line of reservation.lines">
+            {{line.product.name}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
+          </div>
+        </td>
+        <td>
+          {{reservation.profit / 100}},-
+        </td>
+        <td>
+          {{reservation.amount / 100}},-
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!reservations">
+    <h2>Ingen bestillinger enda</h2>
+  </div>
+
+  <div *ngIf="sellers">
+    <h2>Selgere</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Navn</td>
+        <td>Bestillinger</td>
+        <td>Total fortjeneste</td>
+        <td>Total omsetning</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let seller of sellers">
+        <td>
+          {{seller.name}}
+        </td>
+        <td>
+          <span *ngIf="seller.reservations">{{seller.reservations.length}}</span>
+          <span *ngIf="!seller.reservations">0</span>
+        </td>
+        <td>
+          {{seller.totalProfit / 100}},-
+        </td>
+        <td>
+          {{seller.turnOver / 100}},-
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!sellers">
+    <h2>Ingen selgere</h2>
+  </div>
+</div>

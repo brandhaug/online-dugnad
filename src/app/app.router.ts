@@ -17,6 +17,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ShopComponent} from './components/shop/shop.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
+import {AdminComponent} from './components/admin/admin.component';
 
 export const router: Routes = [{
   path: '',
@@ -72,6 +73,9 @@ export const router: Routes = [{
   }, {
     path: 'reserver',
     component: CheckoutComponent
+  }, {
+    path: 'admin',
+    component: AdminComponent
   }]
 }, {
   path: '**',
