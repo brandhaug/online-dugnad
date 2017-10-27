@@ -18,6 +18,7 @@ import {ShopComponent} from './components/shop/shop.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
 import {AdminComponent} from './components/admin/admin.component';
+import {SellerComponent} from './components/seller/seller.component';
 
 export const router: Routes = [{
   path: '',
@@ -76,6 +77,12 @@ export const router: Routes = [{
   }, {
     path: 'admin',
     component: AdminComponent
+  }, {
+    path: 'innlogging',
+    component: LoginComponent
+  }, {
+    path: 'selgere/:sellerId',
+    component: SellerComponent
   }]
 }, {
   path: '**',

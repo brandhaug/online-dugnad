@@ -1,5 +1,7 @@
 <app-shop-navigation></app-shop-navigation>
 
+<h1 *ngIf="club" class="text-center" style="margin-top: 30px; margin-bottom: 0;">{{club.name}}</h1>
+
 <app-product-list [products]="products" [shop]="true" *ngIf="products"></app-product-list>
 
 <app-cart></app-cart>

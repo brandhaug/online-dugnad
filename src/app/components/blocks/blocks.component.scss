@@ -1,0 +1,42 @@
+@import "../../../assets/styles/variables";
+
+#block-row {
+  margin: 40px 0;
+
+  .block-col {
+    padding: 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    .block {
+      background-color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 20px 0;
+      border: 1px solid #eeeeee;
+      border-radius: 10px;
+
+      .block-header {
+        display: block;
+        font-size: 30px;
+      }
+
+      .block-title {
+        display: block;
+        color: $gray;
+        font-size: 13px !important;
+      }
+
+      &.block-link:hover {
+        box-shadow: 0 0 36px #dee2e5;
+      }
+    }
+
+  }
+}

@@ -50,6 +50,8 @@ import {ReservationsService} from './services/reservations.service';
 import {ClubsService} from './services/clubs.service';
 import {SellersService} from './services/sellers.service';
 import { AdminComponent } from './components/admin/admin.component';
+import { SellerComponent } from './components/seller/seller.component';
+import { BlocksComponent } from './components/blocks/blocks.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,9 @@ import { AdminComponent } from './components/admin/admin.component';
     CartItemsComponent,
     CheckoutComponent,
     CheckoutFormComponent,
-    AdminComponent
+    AdminComponent,
+    SellerComponent,
+    BlocksComponent
   ],
   imports: [
     BrowserModule,

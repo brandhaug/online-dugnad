@@ -1,0 +1,47 @@
+<app-shop-navigation></app-shop-navigation>
+
+<div class="container">
+  <h1 class="text-center" *ngIf="seller">{{seller.name}}</h1>
+
+  <div *ngIf="reservations && reservations.length">
+    <h2>Bestillinger</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Kunde</td>
+        <td>Ordrelinjer</td>
+        <td>Fortjeneste</td>
+        <td>Pris</td>
+        <td>Leverandørgjeld</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>
+          <div>{{reservation.customer.name}}</div>
+          <div>{{reservation.customer.address}}</div>
+          <div>{{reservation.customer.phoneNumber}}</div>
+          <div>{{reservation.customer.email}}</div>
+        </td>
+        <td>
+          <div *ngFor="let line of reservation.lines">
+            {{line.product.name}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
+          </div>
+        </td>
+        <td>
+          {{reservation.profit / 100}},-
+        </td>
+        <td>
+          {{reservation.amount / 100}},-
+        </td>
+        <td>
+          {{(reservation.amount - reservation.profit) / 100}},-
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!reservations || (reservations && !reservations.length)">
+    <h2>Ingen bestillinger enda</h2>
+  </div>
+</div>

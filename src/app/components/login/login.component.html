@@ -1,31 +1,28 @@
-<div class="container">
+<app-shop-navigation></app-shop-navigation>
+<div class="container text-center">
   <div class="centered-container">
-    <div class="lonely-form-container">
-      <div class="jumbotron text-center">
-        <img src="/assets/images/logo/logo_icon@200.png" alt="Kvikk dugnad logo" id="login-logo">
+    <!--<img src="/assets/images/logo/logo_icon@200.png" alt="Kvikk dugnad logo" id="login-logo">-->
 
-        <form (submit)="login(username.value, password.value)">
-          <div class="form-group">
-            <div class="float-label-container">
-              <input type="email" #username class="form-control form-control-lg" id="username" placeholder="E-post"
-                     required>
-              <label for="username">Email</label>
-              <i class="fa fa-envelope"></i>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="float-label-container">
-              <input type="password" #password class="form-control form-control-lg" id="password" placeholder="Passord"
-                     required>
-              <label for="password">Password</label>
-              <i class="fa fa-key"></i>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-lg btn-primary no-max-width">Log in</button>
-        </form>
+    <form (submit)="login(password.value)">
+      <!--<div class="form-group">-->
+      <!--<div class="float-label-container">-->
+      <!--<input type="email" #username class="form-control form-control-lg" id="username" placeholder="E-post"-->
+      <!--required>-->
+      <!--<label for="username">Email</label>-->
+      <!--<i class="fa fa-envelope"></i>-->
+      <!--</div>-->
+      <!--</div>-->
+      <div class="form-group">
+        <div class="float-label-container">
+          <input type="password" #password class="form-control form-control-lg" id="password" placeholder="Passord"
+                 required>
+          <label for="password">Passord</label>
+        </div>
       </div>
-    </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-submit-form no-max-width">Logg inn</button>
+      </div>
+    </form>
   </div>
 </div>
 

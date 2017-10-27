@@ -1,7 +1,7 @@
 <section id="product-section">
   <div class="container">
-    <h2 class="title">Produkter</h2>
-    <div class="row">
+    <h2 class="title" *ngIf="!shop">Produkter</h2>
+    <div class="row" *ngIf="!shop">
       <div class="col text-center">
         <ul class="list-inline" id="pros-list">
           <li class="list-inline-item"><i class="fa fa-check"></i> Lett å selge</li>

@@ -4,7 +4,7 @@
 }
 
 .centered-container {
-  height: 100vh;
+  height: calc(100vh - 100px);
   align-items: center;
   display: flex;
   justify-content: center;

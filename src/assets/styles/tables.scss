@@ -1,0 +1,47 @@
+@import "variables";
+
+.table-hover tbody tr {
+  cursor: pointer
+}
+
+.table {
+  background-color: white;
+  margin: 40px auto;
+
+  tr {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, .12);
+    align-items: center;
+    min-height: 48px;
+    padding: 0 24px;
+  }
+
+  thead {
+    color: white;
+    font-size: 12px;
+    background-image: linear-gradient(80deg, $primary-light-blue, $primary-blue);
+
+    th {
+      border: 0;
+    }
+  }
+
+  tbody {
+    font-size: 14px;
+
+    td {
+      border: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    thead {
+      font-size: 9px;
+    }
+
+    tbody {
+      font-size: 11px;
+    }
+  }
+}

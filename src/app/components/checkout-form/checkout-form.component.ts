@@ -44,15 +44,13 @@ export class CheckoutFormComponent implements OnInit {
       this.myForm = this.fb.group({
         'name': ['', [Validators.required, Validators.minLength(4)]],
         'address': ['', [Validators.required, Validators.minLength(4)]],
-        'zipCode': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('[0-9]+')]],
-        'postalPlace': [{value: '', disabled: true}, [Validators.required]],
+        // 'zipCode': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('[0-9]+')]],
+        // 'postalPlace': [{value: '', disabled: true}, [Validators.required]],
         'email': ['', [Validators.required, Validators.minLength(5), Validators.pattern('\\S+@\\S+\\.\\S+')]],
         'phoneNumber': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8), Validators.pattern('[0-9]+')]],
         'seller': [localStorage.getItem('seller')]
         // 'name': ['Martin Brandhaug', [Validators.required, Validators.minLength(4)]],
         // 'address': ['Thorvald Meyers gate 14', [Validators.required, Validators.minLength(4)]],
-        // 'zipCode': ['0555', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('[0-9]+')]],
-        // 'postalPlace': [{value: '', disabled: true}, [Validators.required]],
         // 'email': ['mbrandhaug@live.no', [Validators.required, Validators.minLength(5), Validators.pattern('\\S+@\\S+\\.\\S+')]],
         // 'phoneNumber': ['92627081', [Validators.required, Validators.minLength(4), Validators.maxLength(8), Validators.pattern('[0-9]+')]],
         // 'seller': [localStorage.getItem('seller')]

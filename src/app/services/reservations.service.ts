@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {GlobalService} from './global.service';
 import {Observable} from 'rxjs/Observable';
@@ -11,7 +11,7 @@ export class ReservationsService {
               private globalService: GlobalService) {
   }
 
-  createReservation(items, customer): Observable<{message: string, reservation: string}> {
+  createReservation(items, customer): Observable<{ message: string, reservation: string }> {
     const body = {items: items, customer: customer};
 
     return this.http.post(environment.crmBaseUrl + '/reservations', body)
@@ -20,6 +20,11 @@ export class ReservationsService {
 
   getAdminPanel(clubId): Observable<any> {
     return this.http.get(environment.crmBaseUrl + '/clubs/' + clubId + '/reservations/admin')
+      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+  }
+
+  getReservationsBySeller(sellerId): Observable<any> {
+    return this.http.get(environment.crmBaseUrl + '/sellers/' + sellerId + '/reservations')
       .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
 }
