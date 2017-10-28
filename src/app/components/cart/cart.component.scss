@@ -79,4 +79,8 @@
     overflow-y: auto;
     height: 100%;
   }
+
+  @media (max-width: 320px) {
+    width: 100%;
+  }
 }
