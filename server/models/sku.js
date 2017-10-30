@@ -13,7 +13,7 @@ const skuSchema = new Schema({
     statistics: [{
         date: {
             type: Date,
-            default: Date.now()
+            default: Date.now
         },
         paid: {
             type: Number,

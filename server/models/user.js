@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   role: String,
   created: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   },
   active: Boolean,
   loggedIn: [Date],

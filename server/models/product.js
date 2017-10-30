@@ -27,7 +27,7 @@ const productSchema = new Schema({
   statistics: [{
     date: {
       type: Date,
-      default: Date.now()
+      default: Date.now
     },
     clicks: {
       type: Number,

@@ -16,7 +16,6 @@ export class ProductQuantityListComponent implements OnInit {
     this.productOrderList = [];
 
     for (let i = 0; i < this.reservations.length; i++) {
-      console.log(this.reservations[i]._id);
       for (let j = 0; j < this.reservations[i].lines.length; j++) {
         let exists = false;
 

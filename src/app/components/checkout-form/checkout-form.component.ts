@@ -56,9 +56,9 @@ export class CheckoutFormComponent implements OnInit {
         // 'seller': [localStorage.getItem('seller')]
       });
 
-      this.myForm.get('zipCode').valueChanges.subscribe(zipCode => {
-        this.findPostalPlace(zipCode);
-      });
+      // this.myForm.get('zipCode').valueChanges.subscribe(zipCode => {
+      //   this.findPostalPlace(zipCode);
+      // });
     });
   }
 
