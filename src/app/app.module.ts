@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
@@ -52,6 +52,8 @@ import {SellersService} from './services/sellers.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { SellerComponent } from './components/seller/seller.component';
 import { BlocksComponent } from './components/blocks/blocks.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
+import { ProductQuantityListComponent } from './components/product-quantity-list/product-quantity-list.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,9 @@ import { BlocksComponent } from './components/blocks/blocks.component';
     CheckoutFormComponent,
     AdminComponent,
     SellerComponent,
-    BlocksComponent
+    BlocksComponent,
+    ReservationsComponent,
+    ProductQuantityListComponent
   ],
   imports: [
     BrowserModule,
@@ -112,6 +116,7 @@ import { BlocksComponent } from './components/blocks/blocks.component';
     ReservationsService,
     ClubsService,
     SellersService,
+    { provide: LOCALE_ID, useValue: "nb-NO" }
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

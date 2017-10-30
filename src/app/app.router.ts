@@ -19,6 +19,7 @@ import {CartComponent} from './components/cart/cart.component';
 import {CheckoutComponent} from './components/checkout/checkout.component';
 import {AdminComponent} from './components/admin/admin.component';
 import {SellerComponent} from './components/seller/seller.component';
+import {ReservationsComponent} from './components/reservations/reservations.component';
 
 export const router: Routes = [{
   path: '',
@@ -83,6 +84,9 @@ export const router: Routes = [{
   }, {
     path: 'selgere/:sellerId',
     component: SellerComponent
+  }, {
+    path: 'reservasjoner',
+    component: ReservationsComponent
   }]
 }, {
   path: '**',

@@ -101,8 +101,10 @@ export class CheckoutFormComponent implements OnInit {
         this.cart = this.cartService.clearCart();
         this.flashMessagesService.show('Vellykket!', {cssClass: 'alert-success', timeout: 6000});
         this.router.navigate(['/dugnad/', this.club.url]);
+        this.loading = false;
       }, err => {
         this.flashMessagesService.show(err, {cssClass: 'alert-danger', timeout: 6000});
+        this.loading = false;
       });
   }
 }

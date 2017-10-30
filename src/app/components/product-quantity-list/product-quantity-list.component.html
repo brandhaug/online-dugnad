@@ -1,0 +1,23 @@
+<div *ngIf="productOrderList && productOrderList.length">
+  <h2 style="margin-top: 10px">Produkter</h2>
+  <table class="table" style="margin-top: 0">
+    <thead>
+    <tr>
+      <td>Produkt</td>
+      <td class="text-right">Antall</td>
+      <td class="text-right">Omsetning</td>
+      <td class="text-right">Fortjeneste</td>
+      <td class="text-right">Leverandørgjeld</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let line of productOrderList">
+      <td>{{line.product.name}} ({{line.sku.color}} {{line.sku.size}})</td>
+      <td class="text-right">{{line.quantity}}</td>
+      <td class="text-right">{{(line.quantity * line.product.price2) / 100}},-</td>
+      <td class="text-right">{{(line.quantity * line.product.profit2) / 100}},-</td>
+      <td class="text-right">{{((line.quantity * line.product.price2) - (line.quantity * line.product.profit2)) / 100}},-</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

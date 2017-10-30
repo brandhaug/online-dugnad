@@ -19,7 +19,12 @@ export class ReservationsService {
   }
 
   getAdminPanel(clubId): Observable<any> {
-    return this.http.get(environment.crmBaseUrl + '/clubs/' + clubId + '/reservations/admin')
+    return this.http.get(environment.crmBaseUrl + '/clubs/' + clubId + '/adminpanel')
+      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+  }
+
+  getReservationsByClub(clubId): Observable<any> {
+    return this.http.get(environment.crmBaseUrl + '/clubs/' + clubId + '/reservations')
       .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
 
