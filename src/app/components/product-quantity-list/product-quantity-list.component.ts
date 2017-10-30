@@ -32,6 +32,32 @@ export class ProductQuantityListComponent implements OnInit {
         }
       }
     }
-  }
 
+    this.productOrderList.sort(function(a, b) {
+      if (a.product.name < b.product.name) {
+        return -1;
+      }
+      if (a.product.name > b.product.name) {
+        return 1;
+      }
+
+      if (a.sku.color < b.sku.color) {
+        return -1;
+      }
+
+      if (a.sku.color > b.sku.color) {
+        return 1;
+      }
+
+      if (a.sku.size < b.sku.size) {
+        return -1;
+      }
+
+      if (a.sku.sku > b.sku.size) {
+        return 1;
+      }
+
+      return 0;
+    });
+  }
 }
