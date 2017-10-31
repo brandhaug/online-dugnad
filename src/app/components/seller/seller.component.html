@@ -12,9 +12,9 @@
       <tr>
         <td>Kunde</td>
         <td>Ordrelinjer</td>
-        <td>Fortjeneste</td>
-        <td>Pris</td>
-        <td>Leverandørgjeld</td>
+        <td class="text-right">Omsetning</td>
+        <td class="text-right">Fortjeneste</td>
+        <td class="text-right">Leverandørgjeld</td>
       </tr>
       </thead>
       <tbody>
@@ -30,13 +30,13 @@
             {{line.product.name}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
           </div>
         </td>
-        <td>
-          {{reservation.profit / 100}},-
-        </td>
-        <td>
+        <td class="text-right">
           {{reservation.amount / 100}},-
         </td>
-        <td>
+        <td class="text-right">
+          {{reservation.profit / 100}},-
+        </td>
+        <td class="text-right">
           {{(reservation.amount - reservation.profit) / 100}},-
         </td>
       </tr>
