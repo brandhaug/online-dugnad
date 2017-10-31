@@ -13,22 +13,24 @@ export class ProductQuantityListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let reservationsCopy = Object.create(this.reservations);
+
     this.productOrderList = [];
 
-    for (let i = 0; i < this.reservations.length; i++) {
-      for (let j = 0; j < this.reservations[i].lines.length; j++) {
+    for (let i = 0; i < reservationsCopy.length; i++) {
+      for (let j = 0; j < reservationsCopy[i].lines.length; j++) {
         let exists = false;
 
         for (let k = 0; k < this.productOrderList.length; k++) {
-          if (this.reservations[i].lines[j].sku._id === this.productOrderList[k].sku._id) {
+          if (reservationsCopy[i].lines[j].sku._id === this.productOrderList[k].sku._id) {
             exists = true;
-            this.productOrderList[k].quantity += this.reservations[i].lines[j].quantity;
+            this.productOrderList[k].quantity += reservationsCopy[i].lines[j].quantity;
             break;
           }
         }
 
         if (!exists) {
-          this.productOrderList.push(this.reservations[i].lines[j]);
+          this.productOrderList.push(reservationsCopy[i].lines[j]);
         }
       }
     }

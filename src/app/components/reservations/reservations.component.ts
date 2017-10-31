@@ -20,7 +20,6 @@ export class ReservationsComponent implements OnInit {
 
     this.reservationsService.getReservationsByClub(this.club._id).subscribe(res => {
       this.reservations = res.reservations;
-
     });
   }
 }
