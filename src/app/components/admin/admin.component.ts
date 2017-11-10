@@ -27,7 +27,6 @@ export class AdminComponent implements OnInit {
       this.totalProfit = 0;
       this.turnOver = 0;
       this.totalDebt = 0;
-      let unknownSeller = [];
 
       for (let i = 0; i < res.sellers.length; i++) {
         res.sellers[i].reservations = [];
@@ -38,9 +37,7 @@ export class AdminComponent implements OnInit {
 
         for (let j = 0; j < res.reservations.length; j++) {
           if (!res.reservations[j].seller || (res.reservations[j].seller && !res.reservations[j].seller._id)) {
-            unknownSeller.push(res.reservations[j]);
-            res.sellers[i].turnOver += res.reservations[j].amount;
-            res.sellers[i].totalProfit += res.reservations[j].profit;
+            console.log(res.reservations._id + ' - Ukjent selger');
           } else if (res.reservations[j].seller._id === res.sellers[i]._id) {
             res.sellers[i].reservations.push(res.reservations[j]);
             res.sellers[i].turnOver += res.reservations[j].amount;

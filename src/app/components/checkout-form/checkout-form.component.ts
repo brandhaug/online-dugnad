@@ -48,7 +48,7 @@ export class CheckoutFormComponent implements OnInit {
         // 'postalPlace': [{value: '', disabled: true}, [Validators.required]],
         'email': ['', [Validators.required, Validators.minLength(5), Validators.pattern('\\S+@\\S+\\.\\S+')]],
         'phoneNumber': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8), Validators.pattern('[0-9]+')]],
-        'seller': [localStorage.getItem('seller')]
+        'seller': [localStorage.getItem('seller'), [Validators.required]]
         // 'name': ['Martin Brandhaug', [Validators.required, Validators.minLength(4)]],
         // 'address': ['Thorvald Meyers gate 14', [Validators.required, Validators.minLength(4)]],
         // 'email': ['mbrandhaug@live.no', [Validators.required, Validators.minLength(5), Validators.pattern('\\S+@\\S+\\.\\S+')]],
