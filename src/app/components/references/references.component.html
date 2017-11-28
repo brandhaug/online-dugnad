@@ -5,7 +5,7 @@
     <app-blocks [blocks]="blocks"></app-blocks>
 
     <div class="row justify-content-center">
-      <div class="col-sm-4 text-center" *ngFor="let reference of references">
+      <div class="col-sm-4 text-center" *ngFor="let reference of references" style="padding: 10px 0">
         <div class="reference-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="reference-content">{{reference.content}}</div>
         <div class="reference-name"><i>- {{reference.name}}</i></div>

@@ -25,12 +25,24 @@
       .block-header {
         display: block;
         font-size: 30px;
+
+        @media (max-width: 768px) {
+          font-size: 25px ;
+        }
       }
 
       .block-title {
         display: block;
         color: $gray;
-        font-size: 13px !important;
+        font-size: 13px;
+
+        @media (max-width: 991px) {
+          font-size: 11px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 9px;
+        }
       }
 
       &.block-link:hover {
