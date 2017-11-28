@@ -1,0 +1,28 @@
+@import "../../../assets/styles/variables";
+
+#testimonials {
+  padding: 50px 0;
+
+  .reference-image {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border: 1px solid $border-color;
+  }
+
+  .reference-content {
+
+  }
+
+  .reference-name {
+
+  }
+
+  .reference-rating {
+    letter-spacing: 3px;
+    color: $yellow;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}

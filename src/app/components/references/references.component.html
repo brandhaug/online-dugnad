@@ -1,0 +1,15 @@
+<section id="testimonials">
+  <div class="container">
+
+    <h3 class="text-center">Frosta Skole 8. trinn tjente mer enn hva de satt som mål!</h3>
+    <app-blocks [blocks]="blocks"></app-blocks>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-4 text-center" *ngFor="let reference of references">
+        <div class="reference-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="reference-content">{{reference.content}}</div>
+        <div class="reference-name"><i>- {{reference.name}}</i></div>
+      </div>
+    </div>
+  </div>
+</section>

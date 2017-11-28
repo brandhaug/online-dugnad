@@ -22,7 +22,7 @@ export class SellerComponent implements OnInit {
       this.reservationsRoute.getReservationsBySeller(sellerId).subscribe(res => {
         this.seller = res.seller;
         this.reservations = res.reservations;
-      })
+      });
     });
   }
 

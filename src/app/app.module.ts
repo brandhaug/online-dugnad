@@ -54,6 +54,7 @@ import { SellerComponent } from './components/seller/seller.component';
 import { BlocksComponent } from './components/blocks/blocks.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { ProductQuantityListComponent } from './components/product-quantity-list/product-quantity-list.component';
+import { ReferencesComponent } from './components/references/references.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { ProductQuantityListComponent } from './components/product-quantity-list
     SellerComponent,
     BlocksComponent,
     ReservationsComponent,
-    ProductQuantityListComponent
+    ProductQuantityListComponent,
+    ReferencesComponent
   ],
   imports: [
     BrowserModule,

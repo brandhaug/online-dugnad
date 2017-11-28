@@ -13,7 +13,7 @@ export class ProductQuantityListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let reservationsCopy = JSON.parse(JSON.stringify(this.reservations));
+    let reservationsCopy = [...this.reservations];
 
     this.productOrderList = [];
 
