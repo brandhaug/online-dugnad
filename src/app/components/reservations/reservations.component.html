@@ -28,7 +28,7 @@
         </td>
         <td>
           <div *ngFor="let line of reservation.lines">
-            {{line.product.name}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
+            {{line.product.logisticName}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
           </div>
         </td>
         <td class="text-right">

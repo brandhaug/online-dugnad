@@ -2,6 +2,7 @@ import {Sku} from './sku';
 export interface Product {
   _id: string;
   name: string;
+  logisticName: string;
   caption: string;
   description: string;
   soldOut: boolean;

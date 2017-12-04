@@ -32,4 +32,9 @@ export class ReservationsService {
     return this.http.get(environment.crmBaseUrl + '/sellers/' + sellerId + '/reservations')
       .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
   }
+
+  updateReservation(reservation): Observable<any> {
+    return this.http.put(environment.crmBaseUrl + '/reservations/' + reservation._id, reservation)
+      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+  }
 }

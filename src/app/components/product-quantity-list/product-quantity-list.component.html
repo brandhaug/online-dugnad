@@ -12,7 +12,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let line of productOrderList">
-      <td>{{line.product.name}} ({{line.sku.color}} {{line.sku.size}})</td>
+      <td>{{line.product.logisticName}} - {{line.sku.color}} {{line.sku.size}}</td>
       <td class="text-right">{{line.quantity}}</td>
       <td class="text-right">{{(line.quantity * line.product.price2) / 100}},-</td>
       <td class="text-right">{{(line.quantity * line.product.profit2) / 100}},-</td>

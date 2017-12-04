@@ -12,9 +12,8 @@
       <tr>
         <td>Kunde</td>
         <td>Ordrelinjer</td>
-        <td class="text-right">Omsetning</td>
-        <td class="text-right">Fortjeneste</td>
-        <td class="text-right">Leverandørgjeld</td>
+        <td>Status</td>
+        <td>Handlinger</td>
       </tr>
       </thead>
       <tbody>
@@ -25,19 +24,20 @@
           <div>{{reservation.customer.phoneNumber}}</div>
           <div>{{reservation.customer.email}}</div>
         </td>
-        <td>
+        <td class="align-middle">
           <div *ngFor="let line of reservation.lines">
-            {{line.product.name}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
+            {{line.product.logisticName}} - ({{line.sku.color}} {{line.sku.size}}) x {{line.quantity}}
           </div>
         </td>
-        <td class="text-right">
-          {{reservation.amount / 100}},-
+        <td class="align-middle">
+          <span class="badge badge-primary" *ngIf="reservation.paid == 'vipps'">Betalt med Vipps</span>
+          <span class="badge badge-success" *ngIf="reservation.paid == 'cash'">Betalt med kontant</span>
+          <span class="badge badge-danger" *ngIf="reservation.paid == 'none' || !reservation.paid">Ikke betalt</span>
         </td>
-        <td class="text-right">
-          {{reservation.profit / 100}},-
-        </td>
-        <td class="text-right">
-          {{(reservation.amount - reservation.profit) / 100}},-
+        <td class="align-middle">
+          <button class="btn btn-sm btn-primary" (click)="updatePaid(reservation, 'vipps')">Vipps</button>
+          <button class="btn btn-sm btn-success" (click)="updatePaid(reservation, 'cash')">Kontant</button>
+          <button class="btn btn-sm btn-danger" (click)="updatePaid(reservation, 'none')">Ikke betalt</button>
         </td>
       </tr>
       </tbody>
