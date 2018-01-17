@@ -25,7 +25,6 @@ export class SellerComponent implements OnInit {
       this.reservationsService.getReservationsBySeller(sellerId).subscribe(res => {
         this.seller = res.seller;
         this.reservations = res.reservations;
-        console.log(this.reservations);
       });
     });
   }
