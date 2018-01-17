@@ -19,12 +19,13 @@ export class SellerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(res => {
-      let sellerId = res['sellerId'];
+    this.activatedRoute.params.subscribe(params => {
+      const sellerId = params['sellerId'];
 
       this.reservationsService.getReservationsBySeller(sellerId).subscribe(res => {
         this.seller = res.seller;
         this.reservations = res.reservations;
+        console.log(this.reservations);
       });
     });
   }
