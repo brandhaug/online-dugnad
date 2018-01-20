@@ -3,50 +3,48 @@
 
 <div class="container">
   <div class="row justify-content-center" style="padding: 40px 0">
-    <div class="col-md-8">
-      <h1>Digital dugnad</h1>
-
-      <h5>Kvikt, enkelt og risikofritt</h5>
-      <ol>
-        <li>Dere mottar en unik lenke der deres kunder kan reservere produkter.
-          <ul>
-            <li>Bruk <b>Facebook</b> og <b>e-post</b> til å sende rundt denne lenken, og be deres medlemmer om å gjøre
-              det samme.
-            </li>
-          </ul>
-        </li>
-        <li>Dere har alltid <strong>full oversikt og kontroll</strong> over alle reservasjoner</li>
-        <li>Dere bestemmer selv hvordan dere vil ta av dere pengehåndtering - vi anbefaler å bruke <b>Vipps</b></li>
-        <li>Bestill opp alle reserverte produkter med et klikk</li>
-      </ol>
+    <h1 class="text-center">Så enkelt er det</h1>
+    <div class="row justify-content-center">
+      <div style="padding: 5px" class="col-md-4 col-sm-6 col-xs-8"
+           *ngFor="let step of steps; let i = index;">
+        <div class="step">
+          <div class="pull-left no-pad">
+            <p style="margin-top: -8px;">{{i + 1}}</p>
+          </div>
+          <img src="../../../assets/images/icons/{{step.icon}}" class="img-fluid"
+               style="max-width: 32px; margin: 15px 0 10px 0">
+          <p>{{step.description}}<a [routerLink]="[step.link]">{{step.linktext}}</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<app-profit-calculator></app-profit-calculator>
+  <app-profit-calculator></app-profit-calculator>
 
-<div class="container">
-  <div class="row justify-content-center" style="padding: 40px 0">
-    <div class="col-md-8">
-      <ul>
-        <li>Små produkter som tar liten plass og er lett å levere.</li>
-        <li>Produkter av høy kvalitet som vanligvis kjøpes inn flere ganger gjennom et år gir fornøyde kunder og
-          store muligheter for å iverksette en ny salgsrunde.
-        </li>
-        <li>Si farvel til regneark, digitalt salgsskjema gjør hele salgsprossesen til en lek!</li>
-        <li>Faktura med 3 uker betalingsfrist fra når varene er levert.</li>
-        <li>Når dere fyller ut
-          salgsskjema så er salget gjort på forhånd og dere har god tid til å samle inn pengene før dere må betale.
-        </li>
-      </ul>
+  <div class="container">
+    <div class="row justify-content-center" style="padding: 40px 0">
+      <div class="col-md-8">
+        <ul>
+          <li>Små produkter som tar liten plass og er lett å levere.</li>
+          <li>Produkter av høy kvalitet som vanligvis kjøpes inn flere ganger gjennom et år gir fornøyde kunder og
+            store muligheter for å iverksette en ny salgsrunde.
+          </li>
+          <li>Si farvel til regneark, digitalt salgsskjema gjør hele salgsprossesen til en lek!</li>
+          <li>Faktura med 3 uker betalingsfrist fra når varene er levert.</li>
+          <li>Når dere fyller ut
+            salgsskjema så er salget gjort på forhånd og dere har god tid til å samle inn pengene før dere må betale.
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<app-call-to-action [image]="'computer-design.jpg'"
-                    [title]="'Digitaliser dugnaden'"
-                    [subTitle]="'Sett i gang i dag - Helt uforpliktende'"
-                    [contact]="true">
-</app-call-to-action>
+  <app-call-to-action [image]="'computer-design.jpg'"
+                      [title]="'Digitaliser dugnaden'"
+                      [subTitle]="'Sett i gang i dag - Helt uforpliktende'"
+                      [contact]="true">
+  </app-call-to-action>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
+
