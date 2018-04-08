@@ -1,0 +1,20 @@
+<section id="pros" style="padding: 50px 0; margin-bottom: 50px; width: 100%">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 text-center" *ngFor="let value of values" style="padding: 10px;">
+        <div class="value">
+          <img src="{{value.image.src}}" class="img-fluid" style="max-width: 150px;" alt="{{value.image.alt}}">
+          <h4 style="margin-top: 10px; margin-bottom: 6px;">{{value.title}}</h4>
+          <p style="font-size: 18px">{{value.description}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+      <div class="col text-center">
+        <a class="btn btn-primary" [routerLink]="['/organisasjon']"><i class="fa fa-info-circle"></i>
+          Les mer
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
