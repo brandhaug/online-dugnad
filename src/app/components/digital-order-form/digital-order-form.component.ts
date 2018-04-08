@@ -14,10 +14,10 @@ export class DigitalOrderFormComponent implements OnInit {
     icon: 'phone.png',
     description: 'Kontakt alle dere tror vil støtte - bla opp telefonen og reserver på kundens vegne',
   }, {
-    icon: 'facebook.png',
+    icon: 'thumbs-up.png',
     description: 'Del på sosiale medier for å få ekstra kunder dere ikke har tenkt på.'
   }, {
-    icon: 'thumbs-up.png',
+    icon: 'cart.png',
     description: 'Når dere er i mål så kan dugnadsansvarlig bestille opp alle reservasjoner med et klikk'
   }, {
     icon: 'transfer.png',

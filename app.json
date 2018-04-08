@@ -1,6 +1,6 @@
 {
-  "name":"Kvikk Dugnad",
-  "description":"Kvikk Dugnad",
+  "name":"Online Dugnad",
+  "description":"Online Dugnad",
   "repository":"https://github.com/brandhaug/kvikk-dugnad",
   "logo":"https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/14590325_1742421692684605_2470666538511465062_n.png?oh=3d0fcbc137bacf2c5d0ce2f0f493eebb&oe=58CA3FBA",
   "keywords": ["node", "express", "static"],

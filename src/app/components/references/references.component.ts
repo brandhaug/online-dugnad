@@ -10,7 +10,7 @@ export class ReferencesComponent implements OnInit {
   references = [{
     image: 'aviken.jpg',
     name: 'A. Viken, Dugnadsansvarlig',
-    content: 'Har bare positive ting å si om Kvikk Dugnad! De har et superenkelt og ryddig system, og gir en utrolig bra service. '
+    content: 'Har bare positive ting å si om Online Dugnad! De har et superenkelt og ryddig system, og gir en utrolig bra service. '
   }];
 
   blocks = [{
