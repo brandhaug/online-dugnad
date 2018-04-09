@@ -1,28 +1,47 @@
 @import "../../../assets/styles/variables";
 
 #testimonials {
-  padding: 50px 0;
+  padding: 40px 0;
 
-  .reference-image {
-    width: 100px;
-    height: 100px;
-    margin: 10px auto;
-    border: 1px solid $border-color;
-  }
+  #testimonials-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 
-  .reference-content {
+    .reference {
+      padding: 0 30px;
+      flex: 0 1 600px;
 
-  }
+      .reference-image {
+        width: 140px;
+        margin: 0 auto 15px 0;
+        border: 1px solid $border-color;
+      }
 
-  .reference-name {
+      .reference-organization {
+        font-size: 20px;
+      }
 
-  }
+      .reference-profit {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
 
-  .reference-rating {
-    letter-spacing: 3px;
-    color: $yellow;
-    display: block;
-    font-size: 20px;
-    margin-bottom: 5px;
+      .reference-content {
+
+      }
+
+      .reference-name {
+
+      }
+
+      .reference-rating {
+        letter-spacing: 3px;
+        color: $yellow;
+        display: block;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+    }
   }
 }

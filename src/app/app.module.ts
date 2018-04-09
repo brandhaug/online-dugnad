@@ -56,6 +56,7 @@ import { ReservationsComponent } from './components/reservations/reservations.co
 import { ProductQuantityListComponent } from './components/product-quantity-list/product-quantity-list.component';
 import { ReferencesComponent } from './components/references/references.component';
 import { ValuesComponent } from './components/values/values.component';
+import { OrderSampleFormComponent } from './components/order-sample-form/order-sample-form.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { ValuesComponent } from './components/values/values.component';
     ReservationsComponent,
     ProductQuantityListComponent,
     ReferencesComponent,
-    ValuesComponent
+    ValuesComponent,
+    OrderSampleFormComponent
   ],
   imports: [
     BrowserModule,

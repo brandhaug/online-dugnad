@@ -3,14 +3,16 @@ header {
   width: 100%;
   background-repeat: no-repeat !important;
   background-position: center top !important;
-  height: 600px;
-  max-height: 80vh;
+  height: calc(100vh - 120px);
   display: flex;
   align-items: center;
 
-  @media (max-width: 768px){
+  #header-box {
+    margin-top: -120px;
+  }
+
+  @media (max-width: 768px) {
     //background: url(../../../assets/images/header/header_mobile.jpg) center no-repeat;
-    height: 500px;
     background-position: center !important;
   }
 }

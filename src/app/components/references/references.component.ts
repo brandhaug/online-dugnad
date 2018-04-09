@@ -9,21 +9,22 @@ export class ReferencesComponent implements OnInit {
 
   references = [{
     image: 'aviken.jpg',
-    name: 'A. Viken, Dugnadsansvarlig',
-    content: 'Har bare positive ting å si om Online Dugnad! De har et superenkelt og ryddig system, og gir en utrolig bra service. '
-  }];
-
-  blocks = [{
-    title: 'Fortjeneste',
-    number: '22 540,-',
-    counter: true,
-    color: 'green'
-  }, {
-    title: 'Fortjeneste/Deltaker',
-    number: '901,-',
-    counter: true,
-    color: 'yellow'
-  }];
+    position: 'Dugnadsansvarlig',
+    name: 'A. Viken',
+    organization: 'Frosta skole',
+    content: 'Har bare positive ting å si om Online Dugnad! De har et superenkelt og ryddig system, og gir en utrolig bra service.',
+    profit: '22 540,-',
+    profitPerMember: '901,-'
+  },
+  //   {
+  //   image: 'aviken.jpg',
+  //   position: 'Medlem',
+  //   name: 'Jørgen Knudsen',
+  //   organization: 'Haldenruss 2018',
+  //   content: 'Har bare positive ting å si om Online Dugnad! De har et superenkelt og ryddig system, og gir en utrolig bra service.',
+  //   profitPerMember: '1 841,-'
+  // }
+  ];
 
   constructor() {
   }

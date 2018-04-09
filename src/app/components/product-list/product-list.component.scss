@@ -1,11 +1,13 @@
+@import "../../../assets/styles/variables";
+
 #product-section {
-  padding-top: 50px;
+  padding: 40px 0;
 
   #pros-list li {
     margin: 0 7px;
 
     i {
-      color: green;
+      color: $green;
     }
   }
 
@@ -30,13 +32,12 @@
         }
 
         .product-name {
-          font-size: 20px;
-          margin-bottom: 0;
-          font-weight: 300;
+          margin-bottom: 2px;
+          font-weight: 400;
         }
 
         .product-caption {
-          color: #777;
+          color: #888;
         }
 
         .product-profit {
@@ -64,13 +65,11 @@
           padding: 10px;
 
           .product-name {
-            font-size: 16px;
+            font-size: 13px;
             margin-bottom: 0;
-            font-weight: 300;
           }
 
           .product-caption {
-            color: #777;
             font-size: 13px;
           }
 
