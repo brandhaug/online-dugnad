@@ -1,4 +1,0 @@
-module.exports.handleError = function(res, reason, message, code) {
-  console.log('ERROR: ' + reason);
-  return res.status(code || 500).json({'error': message});
-};

@@ -3,15 +3,22 @@
 
     <h3 class="text-center">Se hva våre kunder sier om oss</h3>
 
-    <div id="testimonials-row">
-      <div class="text-center reference" *ngFor="let reference of references">
-        <img src="../../../assets/images/{{reference.image}}" class="rounded-circle reference-image">
-        <div class="reference-organization"><b>{{reference.organization}}</b></div>
-        <div class="reference-profit">Tjente <b>{{reference.profitPerMember}}</b> per deltaker</div>
-        <!--<div class="reference-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>-->
-        <div class="reference-content">{{reference.content}}</div>
-        <div class="reference-name"><i>- {{reference.name}}, {{reference.position}}</i></div>
+    <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial text-center" *ngFor="let reference of references">
+          <img src="../../../assets/images/testimonials/{{reference.image}}" class="rounded-circle reference-image">
+          <div class="reference-organization"><b>{{reference.organization}}</b></div>
+          <div class="reference-profit">Tjente <b>{{reference.profitPerMember}}</b> per deltaker</div>
+          <div class="reference-content">{{reference.content}}</div>
+          <div class="reference-name"><i>- {{reference.name}}, {{reference.position}}</i></div>
+        </div>
       </div>
-    </div>
+
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
   </div>
 </section>

@@ -33,30 +33,31 @@ import {LoadingService} from './services/loading.service';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
 import {RussComponent} from './components/russ/russ.component';
 import {SchoolComponent} from './components/school/school.component';
-import { LoginComponent } from './components/login/login.component';
+import {LoginComponent} from './components/login/login.component';
 import {AuthenticationService} from './services/authentication.service';
-import { ShopComponent } from './components/shop/shop.component';
-import { CartComponent } from './components/cart/cart.component';
-import { ShopNavigationComponent } from './components/shop-navigation/shop-navigation.component';
+import {ShopComponent} from './components/shop/shop.component';
+import {CartComponent} from './components/cart/cart.component';
+import {ShopNavigationComponent} from './components/shop-navigation/shop-navigation.component';
 import {CustomPreloadingStrategy} from './custom-preloading-strategy';
-import { CartItemsComponent } from './components/cart-items/cart-items.component';
+import {CartItemsComponent} from './components/cart-items/cart-items.component';
 import {CartService} from './services/cart.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { CheckoutFormComponent } from './components/checkout-form/checkout-form.component';
+import {CheckoutComponent} from './components/checkout/checkout.component';
+import {CheckoutFormComponent} from './components/checkout-form/checkout-form.component';
 import {AccordionModule} from 'ngx-bootstrap';
 import {PostalPlaceService} from './services/postal-place.service';
 import {ReservationsService} from './services/reservations.service';
 import {ClubsService} from './services/clubs.service';
 import {SellersService} from './services/sellers.service';
-import { AdminComponent } from './components/admin/admin.component';
-import { SellerComponent } from './components/seller/seller.component';
-import { BlocksComponent } from './components/blocks/blocks.component';
-import { ReservationsComponent } from './components/reservations/reservations.component';
-import { ProductQuantityListComponent } from './components/product-quantity-list/product-quantity-list.component';
-import { ReferencesComponent } from './components/references/references.component';
-import { ValuesComponent } from './components/values/values.component';
-import { OrderSampleFormComponent } from './components/order-sample-form/order-sample-form.component';
+import {AdminComponent} from './components/admin/admin.component';
+import {SellerComponent} from './components/seller/seller.component';
+import {BlocksComponent} from './components/blocks/blocks.component';
+import {ReservationsComponent} from './components/reservations/reservations.component';
+import {ProductQuantityListComponent} from './components/product-quantity-list/product-quantity-list.component';
+import {ReferencesComponent} from './components/references/references.component';
+import {ValuesComponent} from './components/values/values.component';
+import {OrderSampleFormComponent} from './components/order-sample-form/order-sample-form.component';
+import {SwiperModule} from "angular2-useful-swiper";
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { OrderSampleFormComponent } from './components/order-sample-form/order-s
     FlashMessagesModule,
     BrowserAnimationsModule,
     Angulartics2Module.forRoot([Angulartics2Mixpanel]),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    SwiperModule
   ],
   providers: [
     GlobalService,
@@ -122,7 +124,7 @@ import { OrderSampleFormComponent } from './components/order-sample-form/order-s
     ReservationsService,
     ClubsService,
     SellersService,
-    { provide: LOCALE_ID, useValue: "nb-NO" }
+    {provide: LOCALE_ID, useValue: "nb-NO"}
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
