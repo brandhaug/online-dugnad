@@ -17,20 +17,16 @@ import {ProductsService} from './services/products.service';
 import {GlobalService} from './services/global.service';
 import {TermsComponent} from './components/terms/terms.component';
 import {FormService} from './services/form.service';
-import {OrderSampleComponent} from './components/order-sample/order-sample.component';
 import {SampleService} from './services/sample.service';
 import {Angulartics2Mixpanel, Angulartics2Module} from 'angulartics2';
 import {DigitalOrderFormComponent} from './components/digital-order-form/digital-order-form.component';
-import {OrderSampleButtonComponent} from './components/order-sample-button/order-sample-button.component';
 import {NouisliderModule} from 'ng2-nouislider/src/nouislider';
 import {ProductComponent} from './components/product/product.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {PrivacyComponent} from './components/privacy/privacy.component';
 import {CallToActionComponent} from './components/call-to-action/call-to-action.component';
-import {SystemRequestComponent} from './components/system-request/system-request.component';
 import {LoadingService} from './services/loading.service';
-import {ContactMeComponent} from './components/contact-me/contact-me.component';
 import {RussComponent} from './components/russ/russ.component';
 import {SchoolComponent} from './components/school/school.component';
 import {LoginComponent} from './components/login/login.component';
@@ -71,15 +67,11 @@ import {SwiperModule} from "angular2-useful-swiper";
     HowComponent,
     AboutComponent,
     TermsComponent,
-    OrderSampleComponent,
     DigitalOrderFormComponent,
-    OrderSampleButtonComponent,
     ProductComponent,
     ProductListComponent,
     PrivacyComponent,
     CallToActionComponent,
-    SystemRequestComponent,
-    ContactMeComponent,
     RussComponent,
     SchoolComponent,
     LoginComponent,
