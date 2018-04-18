@@ -11,11 +11,26 @@ header {
     //background: url(../../../assets/images/header/header_mobile.jpg) center no-repeat;
     background-position: center !important;
   }
+
+  #title {
+    font-weight: bold;
+  }
 }
 
-.sale-title {
-}
 
-.sale-sub-title {
-  font-weight: 300;
+@media (max-width: 768px) {
+  #title {
+    font-size: 26px;
+
+  }
+
+  #sale-sub-title {
+    font-size: 18px;
+
+  }
+
+  #form-title {
+    font-size: 18px;
+
+  }
 }
