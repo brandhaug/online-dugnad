@@ -19,9 +19,10 @@
         <b>{{product.caption}}</b>
         <p style="white-space: pre-wrap">{{product.description}}</p>
 
+        <p *ngIf="!club">Innkjøpspris {{(product.price2 - product.profit2)/ 100}},-</p>
+        <p *ngIf="!club">Anbefalt utsalgspris {{product.price2 / 100}},-</p>
         <b *ngIf="!club">Dere tjener {{product.profit2 / 100}},-</b>
         <b *ngIf="club">Du støtter {{product.profit2 / 100}},-</b>
-        <p *ngIf="!club">Anbefalt salgspris {{product.price2 / 100}},-</p>
         <p *ngIf="club">Pris {{product.price2 / 100}},-</p>
 
         <button class="btn btn-secondary" (click)="openSizeGuide(product)"
