@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  crmBaseUrl: 'https://onlinedugnadcrm.herokuapp.com/api'
+  crmBaseUrl: 'http://localhost:8080/api'
 };
