@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {LoadingService} from './services/loading.service';
 import {NavigationEnd, Router} from '@angular/router';
+import {setTheme} from "ngx-bootstrap";
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,12 @@ import {NavigationEnd, Router} from '@angular/router';
 export class AppComponent {
   loading: boolean = false;
 
+
+
   constructor(private loadingService: LoadingService,
               private router: Router) {
+    setTheme('bs4');
+
     loadingService.loading.subscribe(res => {
       this.loading = res;
     });

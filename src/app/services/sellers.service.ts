@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import {GlobalService} from './global.service';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {catchError} from "rxjs/internal/operators";
+import {Observable} from "rxjs/index";
 
 @Injectable()
 export class SellersService {
@@ -14,7 +15,8 @@ export class SellersService {
     const headers = new HttpHeaders().set('X-Requested-With', 'XMLHttpRequest');
 
     return this.http.get(environment.crmBaseUrl + '/clubs/' + clubId + '/sellers', {headers: headers})
-      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
-  }
+      .pipe(
+        catchError(this.globalService.handleError)
+      );  }
 
 }

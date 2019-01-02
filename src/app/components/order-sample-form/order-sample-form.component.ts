@@ -34,11 +34,10 @@ export class OrderSampleFormComponent implements OnInit {
     this.loadingService.setLoading(true);
     value.sample = true;
     this.sampleService.createSampleRequest(value).subscribe(res => {
-      this.flashMessagesService.show(res.message, {cssClass: 'alert-success', timeout: 4000});
+      this.flashMessagesService.show('Vellykket', {cssClass: 'alert-success', timeout: 4000});
       this.router.navigate(['/']);
       this.mixpanel.eventTrack('Requested order sample', value);
       this.loadingService.setLoading(false);
-
     }, err => {
       this.flashMessagesService.show(err, {cssClass: 'alert-danger', timeout: 6000});
       this.loadingService.setLoading(false);

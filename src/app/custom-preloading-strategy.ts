@@ -1,6 +1,6 @@
 import {PreloadingStrategy, Route} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable} from "rxjs/Rx";
+import {of} from "rxjs/index";
 
 export class CustomPreloadingStrategy implements PreloadingStrategy {
   preload(route: Route, load: Function): Observable<any> {

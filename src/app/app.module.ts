@@ -20,7 +20,7 @@ import {FormService} from './services/form.service';
 import {SampleService} from './services/sample.service';
 import {Angulartics2Mixpanel, Angulartics2Module} from 'angulartics2';
 import {DigitalOrderFormComponent} from './components/digital-order-form/digital-order-form.component';
-import {NouisliderModule} from 'ng2-nouislider/src/nouislider';
+import {NouisliderModule} from 'ng2-nouislider';
 import {ProductComponent} from './components/product/product.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ProductListComponent} from './components/product-list/product-list.component';
@@ -53,7 +53,7 @@ import {ProductQuantityListComponent} from './components/product-quantity-list/p
 import {ReferencesComponent} from './components/references/references.component';
 import {ValuesComponent} from './components/values/values.component';
 import {OrderSampleFormComponent} from './components/order-sample-form/order-sample-form.component';
-import {SwiperModule} from "angular2-useful-swiper";
+import {SwiperModule} from "ngx-useful-swiper";
 
 @NgModule({
   declarations: [

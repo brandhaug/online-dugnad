@@ -25,7 +25,7 @@ export class ReferencesComponent implements OnInit {
   }
   ];
 
-  config: SwiperOptions = {
+  config = {
     pagination: '.swiper-pagination',
     paginationClickable: true,
     nextButton: '.swiper-button-next',

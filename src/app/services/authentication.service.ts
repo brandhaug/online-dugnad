@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {GlobalService} from './global.service';
 import {JwtHelper} from 'angular2-jwt';
 import {environment} from '../../environments/environment';
+import {catchError} from "rxjs/internal/operators";
 
 @Injectable()
 export class AuthenticationService {
@@ -25,7 +26,9 @@ export class AuthenticationService {
 
   login(body) {
     return this.http.post(environment.crmBaseUrl + '/members/login', body)
-      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+      .pipe(
+        catchError(this.globalService.handleError)
+      );
   }
 
   logout(): void {
@@ -37,14 +40,18 @@ export class AuthenticationService {
     const authHeader = 'Bearer ' + this.getToken();
 
     return this.http.post(environment.crmBaseUrl + '/members/register', body, {headers: new HttpHeaders().set('Authorization', authHeader)})
-      .catch((err: HttpErrorResponse) => this.globalService.handleServerError(err));
+      .pipe(
+        catchError(this.globalService.handleError)
+      );
   }
 
   updateUser(_id, body) {
     const authHeader = 'Bearer ' + this.getToken();
 
     return this.http.put(environment.crmBaseUrl + '/members/' + _id, body, {headers: new HttpHeaders().set('Authorization', authHeader)})
-      .catch((err: any) => this.globalService.handleServerError(err));
+      .pipe(
+        catchError(this.globalService.handleError)
+      );
   }
 
   saveToken(token) {
