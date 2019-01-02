@@ -20,30 +20,32 @@
   </div>
 </div>
 
-  <app-profit-calculator></app-profit-calculator>
 
-  <div class="container">
-    <div class="row justify-content-center" style="padding: 40px 0">
-      <div class="col-md-8">
-        <ul>
-          <li>Små produkter som tar liten plass og er lett å levere.</li>
-          <li>Produkter av høy kvalitet som vanligvis kjøpes inn flere ganger gjennom et år gir fornøyde kunder og
-            store muligheter for å iverksette en ny salgsrunde.
-          </li>
-          <li>Si farvel til regneark. Digitalt salgsskjema gjør hele salgsprossesen til en lek!</li>
-          <li>Faktura med 3 uker betalingsfrist fra når varene er levert.</li>
-          <li>Når dere fyller ut
-            salgsskjema så er salget gjort på forhånd og dere har god tid til å samle inn pengene før dere må betale.
-          </li>
-        </ul>
-      </div>
+<div class="container">
+  <div class="row justify-content-center align-items-center" style="padding: 40px 0">
+    <div class="col-md-6">
+      <ul id="pros-list">
+        <li>Små produkter som tar liten plass og er lett å levere.</li>
+        <li>Produkter av høy kvalitet som vanligvis kjøpes inn flere ganger gjennom et år gir fornøyde kunder og
+          store muligheter for å iverksette en ny salgsrunde.
+        </li>
+        <li>Si farvel til regneark. Digitalt salgsskjema gjør hele salgsprossesen til en lek!</li>
+        <li>Faktura med 3 uker betalingsfrist fra når varene er levert.</li>
+        <li>Når dere fyller ut
+          salgsskjema så er salget gjort på forhånd og dere har god tid til å samle inn pengene før dere må betale.
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <app-profit-calculator></app-profit-calculator>
     </div>
   </div>
+</div>
 
-  <app-call-to-action [image]="'computer-design.jpg'"
-                      [title]="'Digitaliser dugnaden'"
-                      [subTitle]="'Sett i gang i dag - Helt uforpliktende'">
-  </app-call-to-action>
+<app-call-to-action [image]="'computer-design.jpg'"
+                    [title]="'Digitaliser dugnaden'"
+                    [subTitle]="'Sett i gang i dag - Helt uforpliktende'">
+</app-call-to-action>
 
-  <app-footer></app-footer>
+<app-footer></app-footer>
 

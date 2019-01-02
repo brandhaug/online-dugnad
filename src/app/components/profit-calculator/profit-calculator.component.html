@@ -1,14 +1,8 @@
-<div class="container" style="padding: 40px">
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-sm-8 text-center" style="padding: 10px">
-      <div style="border-radius: 5px; border: 1px solid #dddddd; padding: 15px 30px;">
-        <div *ngFor="let slider of sliders">
-          <label>{{slider.label}}<span *ngIf="slider.product"> per medlem</span></label>
-          <nouislider [config]="slider.config" [(ngModel)]="slider.model"
-                      (ngModelChange)="onSliderChange()"></nouislider>
-        </div>
-        <strong>Dere tjener {{totalProfit}},-</strong>
-      </div>
-    </div>
+<div style="border-radius: 5px; border: 1px solid #dddddd; padding: 15px 30px; text-align: center">
+  <div *ngFor="let slider of sliders">
+    <label>{{slider.label}}<span *ngIf="slider.product"> per medlem</span></label>
+    <nouislider [config]="slider.config" [(ngModel)]="slider.model"
+                (ngModelChange)="onSliderChange()"></nouislider>
   </div>
+  <strong>Dere tjener {{totalProfit}},-</strong>
 </div>
